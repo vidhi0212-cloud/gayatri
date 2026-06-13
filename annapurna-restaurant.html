@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annapurna Restaurant & Banquet | Authentic Punjabi Cuisine | Ahmedabad</title>
+<meta name="description" content="Annapurna Restaurant & Banquet - Premium Punjabi dining, family restaurant, and elegant banquet hall in Vatva, Ahmedabad. Rated 4.2★ by 5,298+ customers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Gujarati:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ─── TOKEN SYSTEM ─── */
+:root {
+  --saffron: #E8670A;
+  --saffron-light: #F59038;
+  --gold: #C9962B;
+  --gold-light: #E8C060;
+  --cream: #FAF4E8;
+  --cream-dark: #F0E6CC;
+  --brown-deep: #2C1A0E;
+  --brown-mid: #5C3A1E;
+  --brown-warm: #8B5E3C;
+  --green-dark: #1B3A2D;
+  --green-mid: #2D5A40;
+  --white: #FFFFFF;
+  --text-main: #2C1A0E;
+  --text-muted: #7A5C3F;
+  --shadow-warm: 0 8px 32px rgba(44,26,14,0.18);
+  --shadow-gold: 0 4px 24px rgba(201,150,43,0.25);
+  --radius: 16px;
+  --radius-sm: 8px;
+  --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+/* ─── TYPOGRAPHY ─── */
+.display { font-family: 'Cormorant Garamond', serif; }
+.gujarati { font-family: 'Noto Sans Gujarati', sans-serif; }
+
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.15; }
+
+/* ─── PATTERNS & DECORATIONS ─── */
+.mandala-bg {
+  position: absolute; pointer-events: none; opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='60' r='50' fill='none' stroke='%23C9962B' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='38' fill='none' stroke='%23C9962B' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='25' fill='none' stroke='%23C9962B' stroke-width='1'/%3E%3Cpath d='M60 10 L65 50 L60 60 L55 50 Z' fill='%23C9962B'/%3E%3Cpath d='M60 110 L65 70 L60 60 L55 70 Z' fill='%23C9962B'/%3E%3Cpath d='M10 60 L50 65 L60 60 L50 55 Z' fill='%23C9962B'/%3E%3Cpath d='M110 60 L70 65 L60 60 L70 55 Z' fill='%23C9962B'/%3E%3C/svg%3E");
+  background-size: 120px 120px;
+}
+
+/* ─── NAV ─── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 0 2rem;
+  transition: var(--transition);
+  background: transparent;
+}
+nav.scrolled {
+  background: rgba(44, 26, 14, 0.97);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.nav-inner {
+  max-width: 1200px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px;
+}
+.nav-logo {
+  display: flex; flex-direction: column; line-height: 1;
+  text-decoration: none;
+}
+.nav-logo .name-en {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 700;
+  color: var(--gold-light); letter-spacing: 0.02em;
+}
+.nav-logo .name-gu {
+  font-family: 'Noto Sans Gujarati', sans-serif;
+  font-size: 0.75rem; color: var(--saffron-light);
+  opacity: 0.9;
+}
+.nav-links {
+  display: flex; gap: 2rem; list-style: none; align-items: center;
+}
+.nav-links a {
+  color: rgba(255,255,255,0.85); text-decoration: none;
+  font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
+  text-transform: uppercase; transition: color 0.2s;
+  position: relative;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; right: 100%;
+  height: 2px; background: var(--saffron); transition: right 0.3s ease;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-links a:hover::after { right: 0; }
+.nav-cta {
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  color: white !important; padding: 0.5rem 1.25rem;
+  border-radius: 50px; font-weight: 600 !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 4px;
+}
+.nav-hamburger span {
+  display: block; width: 24px; height: 2px;
+  background: var(--gold-light); border-radius: 2px;
+  transition: var(--transition);
+}
+.mobile-menu {
+  display: none; flex-direction: column;
+  background: var(--brown-deep); padding: 1.5rem 2rem;
+  position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  color: var(--cream); text-decoration: none; padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  font-size: 1.05rem; font-weight: 500;
+}
+
+/* ─── HERO ─── */
+.hero {
+  position: relative; height: 100vh; min-height: 600px;
+  display: flex; align-items: center; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background: 
+    linear-gradient(180deg, rgba(44,26,14,0.55) 0%, rgba(27,58,45,0.4) 50%, rgba(44,26,14,0.75) 100%),
+    url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&q=80') center/cover no-repeat;
+}
+.hero-pattern {
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle cx='30' cy='30' r='20' stroke='rgba(201,150,43,0.12)' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='12' stroke='rgba(201,150,43,0.08)' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+.hero-content {
+  position: relative; z-index: 1;
+  max-width: 1200px; margin: 0 auto; padding: 0 2rem;
+  text-align: center; color: white;
+  padding-top: 80px;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 0.75rem;
+  background: rgba(201,150,43,0.2); border: 1px solid rgba(201,150,43,0.4);
+  padding: 0.4rem 1.25rem; border-radius: 50px;
+  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--gold-light);
+  margin-bottom: 1.5rem;
+  animation: fadeDown 0.8s ease forwards;
+}
+.hero-eyebrow::before, .hero-eyebrow::after { content: '✦'; font-size: 0.7rem; }
+.hero h1 {
+  font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 700;
+  line-height: 1.1; margin-bottom: 0.5rem;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+  animation: fadeUp 0.9s 0.1s ease both;
+}
+.hero h1 span { color: var(--gold-light); }
+.hero-gu {
+  font-family: 'Noto Sans Gujarati', sans-serif;
+  font-size: clamp(1rem, 2.5vw, 1.4rem);
+  color: var(--saffron-light); margin-bottom: 1rem;
+  animation: fadeUp 0.9s 0.2s ease both;
+}
+.hero-sub {
+  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
+  color: rgba(255,255,255,0.85); letter-spacing: 0.05em;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.9s 0.3s ease both;
+}
+.hero-sub span { color: var(--gold-light); }
+.hero-rating {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: rgba(255,255,255,0.1); padding: 0.5rem 1.25rem;
+  border-radius: 50px; font-size: 0.9rem; margin-bottom: 2.5rem;
+  animation: fadeUp 0.9s 0.35s ease both;
+}
+.stars { color: var(--gold-light); }
+.hero-buttons {
+  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+  animation: fadeUp 0.9s 0.45s ease both;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.8rem 1.8rem; border-radius: 50px;
+  font-weight: 600; font-size: 0.95rem; cursor: pointer;
+  text-decoration: none; border: none; transition: var(--transition);
+  letter-spacing: 0.03em;
+}
+.btn-primary {
+  background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);
+  color: white; box-shadow: 0 4px 20px rgba(232,103,10,0.4);
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,103,10,0.5); }
+.btn-outline {
+  background: rgba(255,255,255,0.12); color: white;
+  border: 1.5px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(8px);
+}
+.btn-outline:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+.btn-green {
+  background: var(--green-mid); color: white;
+  border: 1.5px solid var(--green-dark);
+}
+.btn-green:hover { background: var(--green-dark); transform: translateY(-2px); }
+.hero-scroll {
+  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 0.1em;
+  text-transform: uppercase; animation: bounce 2s infinite;
+  cursor: pointer;
+}
+.hero-scroll::after {
+  content: ''; display: block; width: 1.5px; height: 36px;
+  background: linear-gradient(to bottom, rgba(201,150,43,0.8), transparent);
+}
+
+/* ─── SECTION STRUCTURE ─── */
+section { position: relative; overflow: hidden; }
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
+.section-label {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; color: var(--saffron);
+  margin-bottom: 1rem;
+}
+.section-label::before, .section-label::after {
+  content: ''; flex: 1; height: 1px; min-width: 24px;
+  background: var(--saffron); opacity: 0.5;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700;
+  color: var(--brown-deep); line-height: 1.2; margin-bottom: 1rem;
+}
+.section-title em { color: var(--saffron); font-style: normal; }
+.gold-divider {
+  width: 60px; height: 3px;
+  background: linear-gradient(90deg, var(--saffron), var(--gold));
+  border-radius: 2px; margin: 0 auto 2.5rem;
+}
+
+/* ─── ABOUT ─── */
+.about { background: var(--green-dark); }
+.about .mandala-bg { inset: 0; width: 100%; height: 100%; opacity: 0.06; }
+.about .section-title { color: var(--cream); }
+.about .section-label { color: var(--gold-light); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.about-text { color: rgba(255,255,255,0.85); line-height: 1.8; }
+.about-text p { font-size: 1.05rem; margin-bottom: 1.25rem; }
+.about-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  margin-top: 2.5rem;
+}
+.about-card {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(201,150,43,0.2);
+  border-radius: var(--radius); padding: 1.5rem;
+  transition: var(--transition); backdrop-filter: blur(4px);
+}
+.about-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); border-color: rgba(201,150,43,0.5); }
+.about-card .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
+.about-card .stat { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold-light); }
+.about-card .label { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+.about-image { position: relative; }
+.about-image img {
+  width: 100%; border-radius: var(--radius);
+  box-shadow: var(--shadow-warm);
+  object-fit: cover; height: 420px;
+}
+.about-badge {
+  position: absolute; bottom: -1.5rem; left: -1.5rem;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  color: white; padding: 1rem 1.5rem; border-radius: var(--radius);
+  box-shadow: var(--shadow-gold); text-align: center;
+}
+.about-badge .big { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; display: block; line-height: 1; }
+.about-badge .small { font-size: 0.75rem; opacity: 0.9; }
+
+/* ─── MENU ─── */
+.menu-section { background: var(--cream); }
+.menu-tabs {
+  display: flex; gap: 0.75rem; flex-wrap: wrap;
+  justify-content: center; margin-bottom: 2.5rem;
+}
+.tab-btn {
+  padding: 0.55rem 1.25rem; border-radius: 50px; border: 1.5px solid var(--cream-dark);
+  background: white; cursor: pointer; font-size: 0.88rem; font-weight: 500;
+  color: var(--brown-mid); transition: var(--transition); font-family: 'DM Sans', sans-serif;
+}
+.tab-btn.active, .tab-btn:hover {
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  color: white; border-color: transparent;
+  box-shadow: 0 4px 16px rgba(232,103,10,0.3);
+}
+.menu-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+.menu-card {
+  background: white; border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 2px 16px rgba(44,26,14,0.08);
+  transition: var(--transition); border: 1px solid rgba(44,26,14,0.06);
+  display: none;
+}
+.menu-card.visible { display: block; }
+.menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-warm); }
+.menu-card-body { padding: 1.25rem; }
+.menu-card .dish-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-weight: 600; color: var(--brown-deep); margin-bottom: 0.35rem;
+}
+.menu-card .dish-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem; }
+.menu-card .dish-footer { display: flex; justify-content: space-between; align-items: center; }
+.menu-card .price { font-weight: 700; color: var(--saffron); font-size: 1rem; }
+.veg-badge {
+  width: 18px; height: 18px; border: 1.5px solid #2D7A38;
+  border-radius: 3px; display: inline-flex; align-items: center; justify-content: center;
+}
+.veg-badge::after { content: ''; width: 8px; height: 8px; background: #2D7A38; border-radius: 50%; }
+.menu-cta { text-align: center; margin-top: 3rem; }
+
+/* ─── BANQUET ─── */
+.banquet { background: linear-gradient(135deg, var(--brown-deep) 0%, var(--brown-mid) 100%); }
+.banquet .mandala-bg { inset: 0; width: 100%; height: 100%; }
+.banquet .section-title { color: var(--cream); }
+.banquet .section-label { color: var(--gold-light); }
+.banquet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+.banquet-text { color: rgba(255,255,255,0.85); }
+.banquet-text p { line-height: 1.8; margin-bottom: 2rem; font-size: 1.05rem; }
+.banquet-features {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.banquet-feat {
+  display: flex; align-items: center; gap: 0.75rem;
+  background: rgba(255,255,255,0.07); padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm); border: 1px solid rgba(201,150,43,0.2);
+  font-size: 0.9rem; color: rgba(255,255,255,0.85);
+  transition: var(--transition);
+}
+.banquet-feat:hover { background: rgba(201,150,43,0.15); }
+.banquet-feat .fi { font-size: 1.3rem; }
+.banquet-image {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+}
+.banquet-img {
+  border-radius: var(--radius); overflow: hidden; position: relative;
+}
+.banquet-img img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s; }
+.banquet-img:hover img { transform: scale(1.06); }
+.banquet-img:first-child { grid-column: 1 / -1; }
+.banquet-img:first-child img { height: 280px; }
+
+/* ─── GALLERY ─── */
+.gallery-section { background: var(--cream-dark); }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 280px);
+  gap: 1rem;
+}
+.gal-item {
+  border-radius: var(--radius); overflow: hidden;
+  position: relative; cursor: pointer;
+}
+.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+.gal-item:hover img { transform: scale(1.08); }
+.gal-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
+.gal-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(44,26,14,0.7) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.3s;
+  display: flex; align-items: flex-end; padding: 1.25rem;
+}
+.gal-item:hover .gal-overlay { opacity: 1; }
+.gal-overlay span { color: white; font-size: 0.9rem; font-weight: 500; }
+
+/* ─── REVIEWS ─── */
+.reviews-section { background: var(--green-dark); }
+.reviews-section .section-title { color: var(--cream); }
+.reviews-section .section-label { color: var(--gold-light); }
+.rating-hero {
+  display: flex; flex-direction: column; align-items: center;
+  margin-bottom: 3rem;
+}
+.rating-big {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem; font-weight: 700;
+  color: var(--gold-light); line-height: 1;
+}
+.rating-stars { font-size: 1.8rem; color: var(--gold-light); margin: 0.25rem 0; }
+.rating-count { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
+.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.review-card {
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(201,150,43,0.2);
+  border-radius: var(--radius); padding: 1.75rem;
+  transition: var(--transition);
+}
+.review-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); }
+.review-stars { color: var(--gold-light); font-size: 1.1rem; margin-bottom: 1rem; }
+.review-text {
+  color: rgba(255,255,255,0.85); font-size: 0.95rem;
+  line-height: 1.7; margin-bottom: 1.25rem;
+  font-style: italic;
+}
+.review-text::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); line-height: 0; vertical-align: -0.75rem; margin-right: 0.2rem; }
+.reviewer {
+  display: flex; align-items: center; gap: 0.75rem;
+}
+.reviewer-avatar {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: white; font-size: 0.85rem;
+}
+.reviewer-name { font-weight: 600; color: var(--cream); font-size: 0.9rem; }
+.reviewer-date { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+
+/* ─── LOCATION ─── */
+.location-section { background: var(--cream); }
+.location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.map-embed {
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: var(--shadow-warm); height: 380px;
+  background: var(--cream-dark); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1rem;
+  border: 2px solid var(--cream-dark);
+  position: relative;
+}
+.map-embed iframe { width: 100%; height: 100%; border: none; }
+.address-block { margin-bottom: 2rem; }
+.address-block h3 {
+  font-size: 1.6rem; margin-bottom: 1rem; color: var(--brown-deep);
+}
+.addr-line {
+  display: flex; gap: 0.75rem; align-items: flex-start;
+  font-size: 1rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 0.5rem;
+}
+.addr-line .icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+.info-row {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.9rem 1rem; background: white; border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem; box-shadow: 0 2px 8px rgba(44,26,14,0.07);
+}
+.info-row .icon { font-size: 1.2rem; }
+.info-row .detail { font-size: 0.9rem; color: var(--text-muted); }
+.info-row .val { font-weight: 600; color: var(--brown-deep); font-size: 0.95rem; }
+.map-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.btn-saffron {
+  background: linear-gradient(135deg, var(--saffron), var(--gold));
+  color: white; box-shadow: 0 4px 16px rgba(232,103,10,0.35);
+}
+.btn-saffron:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,103,10,0.45); }
+.btn-dark {
+  background: var(--brown-deep); color: white;
+}
+.btn-dark:hover { background: var(--brown-mid); transform: translateY(-2px); }
+
+/* ─── CONTACT ─── */
+.contact-section { background: var(--brown-deep); }
+.contact-section .mandala-bg { inset: 0; width: 100%; height: 100%; }
+.contact-section .section-title { color: var(--cream); }
+.contact-section .section-label { color: var(--gold-light); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
+.contact-info { color: rgba(255,255,255,0.85); }
+.contact-info p { line-height: 1.8; margin-bottom: 2rem; }
+.contact-detail {
+  display: flex; align-items: center; gap: 1rem;
+  padding: 1rem 1.25rem; background: rgba(255,255,255,0.07);
+  border-radius: var(--radius-sm); margin-bottom: 1rem;
+  border: 1px solid rgba(201,150,43,0.2);
+}
+.contact-detail .icon { font-size: 1.4rem; }
+.contact-detail .cd-val { font-weight: 600; color: var(--gold-light); font-size: 0.95rem; }
+.contact-detail .cd-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.booking-form { background: rgba(255,255,255,0.05); border-radius: var(--radius); padding: 2rem; border: 1px solid rgba(201,150,43,0.2); }
+.booking-form h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--cream); margin-bottom: 1.75rem; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.form-group { margin-bottom: 1.25rem; }
+.form-group label { display: block; font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.65); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
+.form-group input, .form-group select, .form-group textarea {
+  width: 100%; padding: 0.8rem 1rem;
+  background: rgba(255,255,255,0.08); border: 1.5px solid rgba(201,150,43,0.2);
+  border-radius: var(--radius-sm); color: white; font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem; transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+.form-group select option { background: var(--brown-deep); color: white; }
+.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+  outline: none; border-color: var(--gold);
+  background: rgba(255,255,255,0.12);
+}
+.form-group textarea { resize: vertical; min-height: 90px; }
+
+/* ─── FOOTER ─── */
+footer { background: #1A0E07; padding: 3.5rem 2rem 1.5rem; }
+.footer-inner { max-width: 1200px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 3rem; }
+.footer-brand .name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--gold-light); margin-bottom: 0.3rem; }
+.footer-brand .gu { font-family: 'Noto Sans Gujarati', sans-serif; font-size: 0.8rem; color: var(--saffron-light); margin-bottom: 1rem; }
+.footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1.25rem; }
+.footer-social { display: flex; gap: 0.75rem; }
+.soc-btn {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7);
+  text-decoration: none; font-size: 1rem; transition: var(--transition);
+}
+.soc-btn:hover { background: var(--saffron); border-color: var(--saffron); color: white; transform: translateY(-2px); }
+.footer-col h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold-light); margin-bottom: 1.25rem; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.6rem; }
+.footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--saffron-light); }
+.footer-col .fc-item { display: flex; gap: 0.6rem; align-items: flex-start; margin-bottom: 0.75rem; }
+.footer-col .fc-item .icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+.footer-col .fc-item span { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
+.footer-bottom a { color: var(--saffron-light); text-decoration: none; }
+
+/* ─── FLOATING WHATSAPP ─── */
+.wa-float {
+  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+  width: 58px; height: 58px; background: #25D366; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 24px rgba(37,211,102,0.5); cursor: pointer;
+  text-decoration: none; transition: var(--transition);
+  animation: pulse-wa 2.5s infinite;
+}
+.wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
+.wa-float svg { width: 30px; height: 30px; fill: white; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
+@keyframes pulse-wa { 0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.5); } 50% { box-shadow: 0 4px 40px rgba(37,211,102,0.8); } }
+@keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+
+.fade-in-up {
+  opacity: 0; transform: translateY(24px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-in-up.visible { opacity: 1; transform: translateY(0); }
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+  .about-grid, .banquet-grid, .contact-grid, .location-grid { grid-template-columns: 1fr; }
+  .about-image { order: -1; }
+  .about-badge { left: 0.5rem; bottom: -1rem; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .gal-item:nth-child(1) { grid-column: 1 / -1; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .banquet-image { grid-template-columns: 1fr; }
+  .banquet-img:first-child { grid-column: auto; }
+}
+@media (max-width: 600px) {
+  .section-inner { padding: 3.5rem 1.25rem; }
+  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .about-cards { grid-template-columns: 1fr 1fr; }
+  .banquet-features { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <span class="name-en">Annapurna Restaurant & Banquet</span>
+      <span class="name-gu">અન્નપૂર્ણા રેસ્ટોરેન્ટ</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#banquet">Banquet</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact" class="nav-cta">Book a Table</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#menu" onclick="closeMobile()">Menu</a>
+  <a href="#banquet" onclick="closeMobile()">Banquet</a>
+  <a href="#gallery" onclick="closeMobile()">Gallery</a>
+  <a href="#reviews" onclick="closeMobile()">Reviews</a>
+  <a href="#location" onclick="closeMobile()">Location</a>
+  <a href="#contact" onclick="closeMobile()">Book a Table</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Punjabi Cuisine · Family Dining · Banquet</div>
+    <h1 class="display">Welcome to <span>Annapurna</span><br>Restaurant & Banquet</h1>
+    <p class="hero-gu gujarati">અન્નપૂર્ણા રેસ્ટોરેન્ટમાં આપનું સ્વાગત છે</p>
+    <p class="hero-sub">
+      <span>Authentic Punjabi Taste</span> &nbsp;•&nbsp;
+      <span>Premium Dining</span> &nbsp;•&nbsp;
+      <span>Memorable Celebrations</span>
+    </p>
+    <div class="hero-rating">
+      <span class="stars">★★★★☆</span>
+      <strong>4.2 / 5</strong>
+      <span style="color:rgba(255,255,255,0.6)">· 5,298+ Reviews</span>
+    </div>
+    <div class="hero-buttons">
+      <a href="#menu" class="btn btn-primary">🍽 View Menu</a>
+      <a href="#contact" class="btn btn-outline">📅 Book a Table</a>
+      <a href="https://maps.google.com/?q=Devdarshan+Complex+Vatva+Ahmedabad" target="_blank" class="btn btn-green">📍 Get Directions</a>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+    SCROLL
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="mandala-bg"></div>
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-text fade-in-up">
+        <div class="section-label">Our Story</div>
+        <h2 class="section-title">Serving Happiness<br><em>With Authentic Taste</em></h2>
+        <p>Annapurna Restaurant & Banquet is one of Ahmedabad's most loved family restaurants, offering a rich spread of delicious Punjabi cuisine, comfortable dining spaces, and elegant banquet facilities for every occasion.</p>
+        <p>With thousands of happy customers and a glowing 4.2-star rating, Annapurna is the perfect destination for family dinners, festive celebrations, corporate gatherings, and milestone events.</p>
+        <div class="about-cards">
+          <div class="about-card">
+            <div class="icon">⭐</div>
+            <div class="stat">4.2 / 5</div>
+            <div class="label">Customer Rating</div>
+          </div>
+          <div class="about-card">
+            <div class="icon">👥</div>
+            <div class="stat">5,298+</div>
+            <div class="label">Happy Reviews</div>
+          </div>
+          <div class="about-card">
+            <div class="icon">🍛</div>
+            <div class="stat">100%</div>
+            <div class="label">Authentic Punjabi</div>
+          </div>
+          <div class="about-card">
+            <div class="icon">🎉</div>
+            <div class="stat">Premium</div>
+            <div class="label">Banquet Facility</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-image fade-in-up">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80" alt="Annapurna Restaurant interior" loading="lazy">
+        <div class="about-badge">
+          <span class="big">₹200</span>
+          <span class="small">per person onwards</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section class="menu-section" id="menu">
+  <div class="section-inner">
+    <div style="text-align:center" class="fade-in-up">
+      <div class="section-label">Crafted With Love</div>
+      <h2 class="section-title">Our Signature <em>Menu</em></h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="menu-tabs fade-in-up">
+      <button class="tab-btn active" data-cat="all">All</button>
+      <button class="tab-btn" data-cat="punjabi">Punjabi Specials</button>
+      <button class="tab-btn" data-cat="breads">Indian Breads</button>
+      <button class="tab-btn" data-cat="rice">Rice & Biryani</button>
+      <button class="tab-btn" data-cat="starters">Starters</button>
+      <button class="tab-btn" data-cat="drinks">Drinks</button>
+    </div>
+    <div class="menu-grid" id="menuGrid">
+      <!-- Punjabi Specials -->
+      <div class="menu-card visible" data-cat="punjabi">
+        <div class="menu-card-body">
+          <div class="dish-name">Paneer Butter Masala</div>
+          <div class="dish-desc">Soft paneer cubes in a rich, creamy tomato-cashew gravy, finished with aromatic spices.</div>
+          <div class="dish-footer"><span class="price">₹220</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="punjabi">
+        <div class="menu-card-body">
+          <div class="dish-name">Paneer Tikka Masala</div>
+          <div class="dish-desc">Tandoor-grilled paneer tossed in a bold, spiced tikka masala sauce.</div>
+          <div class="dish-footer"><span class="price">₹240</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="punjabi">
+        <div class="menu-card-body">
+          <div class="dish-name">Kaju Curry</div>
+          <div class="dish-desc">Whole cashews simmered in a luxurious saffron-tinged creamy gravy.</div>
+          <div class="dish-footer"><span class="price">₹260</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="punjabi">
+        <div class="menu-card-body">
+          <div class="dish-name">Veg Handi</div>
+          <div class="dish-desc">A village-style mixed vegetable preparation slow-cooked in a clay handi.</div>
+          <div class="dish-footer"><span class="price">₹200</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="punjabi">
+        <div class="menu-card-body">
+          <div class="dish-name">Cheese Butter Masala</div>
+          <div class="dish-desc">A rich, indulgent twist on the classic — paneer replaced with soft cottage cheese cubes.</div>
+          <div class="dish-footer"><span class="price">₹250</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="punjabi">
+        <div class="menu-card-body">
+          <div class="dish-name">Dal Fry</div>
+          <div class="dish-desc">Yellow lentils tempered with cumin, garlic, and Punjabi spices in desi ghee.</div>
+          <div class="dish-footer"><span class="price">₹160</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="punjabi">
+        <div class="menu-card-body">
+          <div class="dish-name">Dal Tadka</div>
+          <div class="dish-desc">Creamy arhar dal with a smoky ghee tadka of dried chillies and whole spices.</div>
+          <div class="dish-footer"><span class="price">₹170</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <!-- Breads -->
+      <div class="menu-card visible" data-cat="breads">
+        <div class="menu-card-body">
+          <div class="dish-name">Butter Naan</div>
+          <div class="dish-desc">Soft leavened flatbread baked in tandoor, generously finished with fresh butter.</div>
+          <div class="dish-footer"><span class="price">₹55</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="breads">
+        <div class="menu-card-body">
+          <div class="dish-name">Garlic Naan</div>
+          <div class="dish-desc">Tandoor-baked naan infused with minced garlic and coriander butter.</div>
+          <div class="dish-footer"><span class="price">₹65</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="breads">
+        <div class="menu-card-body">
+          <div class="dish-name">Tandoori Roti</div>
+          <div class="dish-desc">Whole wheat roti cooked directly on tandoor, light and wholesome.</div>
+          <div class="dish-footer"><span class="price">₹40</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="breads">
+        <div class="menu-card-body">
+          <div class="dish-name">Paratha</div>
+          <div class="dish-desc">Layered wheat flatbread, pan-fried in butter. Available plain or stuffed.</div>
+          <div class="dish-footer"><span class="price">₹70</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <!-- Rice -->
+      <div class="menu-card visible" data-cat="rice">
+        <div class="menu-card-body">
+          <div class="dish-name">Veg Biryani</div>
+          <div class="dish-desc">Fragrant basmati rice layered with spiced vegetables and caramelised onions.</div>
+          <div class="dish-footer"><span class="price">₹200</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="rice">
+        <div class="menu-card-body">
+          <div class="dish-name">Jeera Rice</div>
+          <div class="dish-desc">Basmati rice tempered with whole cumin seeds in ghee — simple and aromatic.</div>
+          <div class="dish-footer"><span class="price">₹130</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="rice">
+        <div class="menu-card-body">
+          <div class="dish-name">Veg Pulav</div>
+          <div class="dish-desc">Light one-pot rice with seasonal vegetables and whole spices.</div>
+          <div class="dish-footer"><span class="price">₹160</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <!-- Starters -->
+      <div class="menu-card visible" data-cat="starters">
+        <div class="menu-card-body">
+          <div class="dish-name">Paneer Tikka</div>
+          <div class="dish-desc">Marinated cottage cheese cubes grilled in tandoor with capsicum and onion.</div>
+          <div class="dish-footer"><span class="price">₹220</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="starters">
+        <div class="menu-card-body">
+          <div class="dish-name">Veg Manchurian</div>
+          <div class="dish-desc">Crispy mixed vegetable balls tossed in a tangy Indo-Chinese manchurian sauce.</div>
+          <div class="dish-footer"><span class="price">₹180</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="starters">
+        <div class="menu-card-body">
+          <div class="dish-name">Crispy Veg</div>
+          <div class="dish-desc">Mixed vegetables in a light seasoned batter, deep-fried to a perfect golden crunch.</div>
+          <div class="dish-footer"><span class="price">₹160</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <!-- Drinks -->
+      <div class="menu-card visible" data-cat="drinks">
+        <div class="menu-card-body">
+          <div class="dish-name">Fresh Lime Soda</div>
+          <div class="dish-desc">Hand-squeezed lime with chilled sparkling water. Sweet, salty, or masala.</div>
+          <div class="dish-footer"><span class="price">₹60</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="drinks">
+        <div class="menu-card-body">
+          <div class="dish-name">Lassi</div>
+          <div class="dish-desc">Thick, chilled churned yogurt — sweet mango, plain, or rose flavour.</div>
+          <div class="dish-footer"><span class="price">₹90</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+      <div class="menu-card visible" data-cat="drinks">
+        <div class="menu-card-body">
+          <div class="dish-name">Cold Drinks</div>
+          <div class="dish-desc">Chilled assorted beverages. Pepsi, 7Up, Sprite, and Mirinda available.</div>
+          <div class="dish-footer"><span class="price">₹50</span><span class="veg-badge"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="menu-cta fade-in-up">
+      <a href="#contact" class="btn btn-primary" style="font-size:1rem;padding:0.9rem 2.5rem">📋 View Full Menu — Book a Table</a>
+    </div>
+  </div>
+</section>
+
+<!-- BANQUET -->
+<section class="banquet" id="banquet">
+  <div class="mandala-bg"></div>
+  <div class="section-inner">
+    <div class="banquet-grid">
+      <div class="fade-in-up">
+        <div class="section-label">Celebrations & Events</div>
+        <h2 class="section-title">Celebrate Your<br><em>Special Moments</em><br>With Us</h2>
+        <div class="banquet-text">
+          <p>Make your celebrations truly memorable with Annapurna Banquet. Whether it is a birthday, engagement, family function, corporate meet, or a private gathering — our elegant venue and attentive team deliver a flawless experience every time.</p>
+          <div class="banquet-features">
+            <div class="banquet-feat"><span class="fi">✨</span> Elegant Decoration</div>
+            <div class="banquet-feat"><span class="fi">🎤</span> Full Event Setup</div>
+            <div class="banquet-feat"><span class="fi">🍽</span> Catering Service</div>
+            <div class="banquet-feat"><span class="fi">👨‍👩‍👧</span> Family Functions</div>
+            <div class="banquet-feat"><span class="fi">📸</span> Photo-Ready Spaces</div>
+            <div class="banquet-feat"><span class="fi">🎂</span> Birthday Parties</div>
+          </div>
+          <a href="#contact" class="btn btn-primary" style="font-size:1rem;padding:0.9rem 2.2rem">🎉 Book Banquet Now</a>
+        </div>
+      </div>
+      <div class="banquet-image fade-in-up">
+        <div class="banquet-img">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=80" alt="Banquet hall" loading="lazy">
+        </div>
+        <div class="banquet-img">
+          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&q=80" alt="Celebration event" loading="lazy">
+        </div>
+        <div class="banquet-img">
+          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500&q=80" alt="Family gathering" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-section" id="gallery">
+  <div class="section-inner">
+    <div style="text-align:center" class="fade-in-up">
+      <div class="section-label">Food & Ambience</div>
+      <h2 class="section-title">A Feast for the <em>Eyes</em></h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="gallery-grid fade-in-up">
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Punjabi thali">
+        <div class="gal-overlay"><span>Punjabi Thali</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80" alt="Paneer dish">
+        <div class="gal-overlay"><span>Paneer Tikka</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=600&q=80" alt="Indian biryani">
+        <div class="gal-overlay"><span>Veg Biryani</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="Restaurant interior">
+        <div class="gal-overlay"><span>Dining Area</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Restaurant ambience">
+        <div class="gal-overlay"><span>Our Ambience</span></div>
+      </div>
+      <div class="gal-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fine dining">
+        <div class="gal-overlay"><span>Family Dining</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews-section" id="reviews">
+  <div class="section-inner">
+    <div style="text-align:center" class="fade-in-up">
+      <div class="section-label">Customer Love</div>
+      <h2 class="section-title">What Our Customers <em>Say</em></h2>
+      <div class="rating-hero">
+        <div class="rating-big">4.2</div>
+        <div class="rating-stars">★★★★☆</div>
+        <div class="rating-count">Based on 5,298+ verified reviews</div>
+      </div>
+    </div>
+    <div class="reviews-grid fade-in-up">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Very nice atmosphere. I love this amazing place. The paneer butter masala was simply outstanding — best I've had in Ahmedabad!</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">RK</div>
+          <div>
+            <div class="reviewer-name">Rahul Kapoor</div>
+            <div class="reviewer-date">Google Review · 2 weeks ago</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Perfect family restaurant with delicious Punjabi food. We celebrated our anniversary here and the staff made it truly special. Will definitely return!</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">PS</div>
+          <div>
+            <div class="reviewer-name">Priya Shah</div>
+            <div class="reviewer-date">Google Review · 1 month ago</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">Good ambience, tasty food and a comfortable dining experience. The banquet hall is well-maintained and the catering for our event was excellent.</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">AM</div>
+          <div>
+            <div class="reviewer-name">Amit Mehta</div>
+            <div class="reviewer-date">Google Review · 3 weeks ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location-section" id="location">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:3rem" class="fade-in-up">
+      <div class="section-label">Find Us</div>
+      <h2 class="section-title">We're Right <em>Here</em> For You</h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="location-grid">
+      <div class="fade-in-up">
+        <div class="address-block">
+          <h3 class="display">Visit Annapurna</h3>
+          <div class="addr-line"><span class="icon">📍</span><span>Devdarshan Complex, Near Jashodanagar,<br>Vatva GIDC Road, Vatva,<br>Ahmedabad, Gujarat – 382445</span></div>
+        </div>
+        <div class="info-row">
+          <span class="icon">📞</span>
+          <div><div class="val">+91 94278 05350</div><div class="detail">Call to reserve or enquire</div></div>
+        </div>
+        <div class="info-row">
+          <span class="icon">🕐</span>
+          <div><div class="val">Open Daily · Till 11:00 PM</div><div class="detail">Lunch & Dinner — all days</div></div>
+        </div>
+        <div class="info-row">
+          <span class="icon">💰</span>
+          <div><div class="val">₹200 – ₹400 per person</div><div class="detail">Affordable premium dining</div></div>
+        </div>
+        <div class="info-row">
+          <span class="icon">🚗</span>
+          <div><div class="val">Dine-in · Drive-through · Delivery</div><div class="detail">Multiple service options</div></div>
+        </div>
+        <div class="map-btns">
+          <a href="https://maps.google.com/?q=Annapurna+Restaurant+Banquet+Vatva+Ahmedabad" target="_blank" class="btn btn-saffron">📍 Open Google Maps</a>
+          <a href="tel:+919427805350" class="btn btn-dark">📞 Call Restaurant</a>
+        </div>
+      </div>
+      <div class="map-embed fade-in-up">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.9!2d72.63!3d22.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU4JzEyLjAiTiA3MsKwMzcnNDguMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Annapurna Restaurant location map">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT/BOOKING -->
+<section class="contact-section" id="contact">
+  <div class="mandala-bg"></div>
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:3rem" class="fade-in-up">
+      <div class="section-label">Reservations</div>
+      <h2 class="section-title">Reserve Your <em>Table</em></h2>
+      <div class="gold-divider"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info fade-in-up">
+        <p>Whether it's a quiet family dinner or a grand banquet celebration, we're ready to make your experience exceptional. Reach out and we'll handle everything.</p>
+        <div class="contact-detail">
+          <span class="icon">📞</span>
+          <div><div class="cd-val">+91 94278 05350</div><div class="cd-label">Call us anytime</div></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">🕐</span>
+          <div><div class="cd-val">Open Daily · Closes at 11 PM</div><div class="cd-label">Restaurant timings</div></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">🌐</span>
+          <div><div class="cd-val">annapurnarestaurantbanquet.com</div><div class="cd-label">Official website</div></div>
+        </div>
+        <div class="contact-detail">
+          <span class="icon">📍</span>
+          <div><div class="cd-val">Vatva GIDC Road, Ahmedabad</div><div class="cd-label">Gujarat – 382445</div></div>
+        </div>
+        <a href="https://wa.me/919427805350?text=Hello!%20I%20would%20like%20to%20book%20a%20table%20at%20Annapurna%20Restaurant." target="_blank" class="btn btn-primary" style="margin-top:1.5rem;font-size:0.95rem">
+          💬 WhatsApp Us Now
+        </a>
+      </div>
+      <div class="booking-form fade-in-up">
+        <h3>Make a Reservation</h3>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" placeholder="Rahul Sharma">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" placeholder="+91 98765 43210">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Number of Guests</label>
+            <input type="number" placeholder="4" min="1">
+          </div>
+          <div class="form-group">
+            <label>Booking Type</label>
+            <select>
+              <option>Dining</option>
+              <option>Banquet — Birthday Party</option>
+              <option>Banquet — Engagement</option>
+              <option>Banquet — Family Function</option>
+              <option>Banquet — Corporate Event</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Preferred Date</label>
+          <input type="date">
+        </div>
+        <div class="form-group">
+          <label>Message / Special Request</label>
+          <textarea placeholder="Any dietary preferences, seating requests, or special occasion details..."></textarea>
+        </div>
+        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:1rem" onclick="handleSubmit()">
+          🍽 Reserve Now
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="name">Annapurna Restaurant & Banquet</div>
+        <div class="gu gujarati">અન્નપૂર્ણા રેસ્ટોરેન્ટ</div>
+        <p>Serving authentic Punjabi cuisine and hosting memorable celebrations in Ahmedabad since our founding. Come dine with us — every meal is a celebration.</p>
+        <div class="footer-social">
+          <a href="#" class="soc-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="#" class="soc-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="https://wa.me/919427805350" class="soc-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Our Menu</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#banquet">Banquet</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#">Dine-in</a></li>
+          <li><a href="#">Drive-through</a></li>
+          <li><a href="#">No-contact Delivery</a></li>
+          <li><a href="#">Banquet Booking</a></li>
+          <li><a href="#">Party Planning</a></li>
+          <li><a href="#">Catering</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Us</h4>
+        <div class="fc-item">
+          <span class="icon">📍</span>
+          <span>Devdarshan Complex, Vatva GIDC Road, Vatva, Ahmedabad 382445</span>
+        </div>
+        <div class="fc-item">
+          <span class="icon">📞</span>
+          <span>+91 94278 05350</span>
+        </div>
+        <div class="fc-item">
+          <span class="icon">🕐</span>
+          <span>Open Daily · Till 11:00 PM</span>
+        </div>
+        <div class="fc-item">
+          <span class="icon">⭐</span>
+          <span>4.2 / 5 · 5,298+ Reviews</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Annapurna Restaurant & Banquet. All Rights Reserved.</p>
+      <p>Made with ❤️ for <a href="#">annapurnarestaurantbanquet.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/919427805350?text=Hello!%20I%20would%20like%20to%20book%20a%20table." target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script>
+// ── Nav scroll ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── Mobile menu ──
+const hamburger = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+function closeMobile() { mobileMenu.classList.remove('open'); }
+
+// ── Menu tabs ──
+const tabs = document.querySelectorAll('.tab-btn');
+const cards = document.querySelectorAll('.menu-card');
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const cat = tab.dataset.cat;
+    cards.forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.classList.add('visible');
+      } else {
+        card.classList.remove('visible');
+      }
+    });
+  });
+});
+
+// ── Scroll reveal ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+// ── Form submit ──
+function handleSubmit() {
+  const name = document.querySelector('input[type="text"]').value;
+  if (!name.trim()) { alert('Please enter your name to continue.'); return; }
+  alert(`Thank you, ${name}! Your reservation request has been received. We'll call you shortly to confirm. 🙏`);
+}
+</script>
+</body>
+</html>
