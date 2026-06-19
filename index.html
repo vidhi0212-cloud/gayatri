@@ -3,1235 +3,986 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Annapurna Restaurant & Banquet | Authentic Punjabi Cuisine | Ahmedabad</title>
-<meta name="description" content="Annapurna Restaurant & Banquet - Premium Punjabi dining, family restaurant, and elegant banquet hall in Vatva, Ahmedabad. Rated 4.2★ by 5,298+ customers.">
+<title>Gayatri Restaurant &amp; Banquet | Pure Vegetarian Fine Dining &amp; Banquet Hall, Vatva, Ahmedabad</title>
+<meta name="description" content="Gayatri Restaurant &amp; Banquet — premium pure vegetarian dining and banquet hall in Vatva GIDC, Ahmedabad. Gujarati, Punjabi &amp; Chinese cuisine, birthday parties, family functions &amp; corporate events. Rated 4.2 by 2,180+ guests.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Noto+Sans+Gujarati:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Serif+Gujarati:wght@500;600&display=swap" rel="stylesheet">
 <style>
-/* ─── TOKEN SYSTEM ─── */
-:root {
-  --saffron: #E8670A;
-  --saffron-light: #F59038;
-  --gold: #C9962B;
-  --gold-light: #E8C060;
-  --cream: #FAF4E8;
-  --cream-dark: #F0E6CC;
-  --brown-deep: #2C1A0E;
-  --brown-mid: #5C3A1E;
-  --brown-warm: #8B5E3C;
-  --green-dark: #1B3A2D;
-  --green-mid: #2D5A40;
-  --white: #FFFFFF;
-  --text-main: #2C1A0E;
-  --text-muted: #7A5C3F;
-  --shadow-warm: 0 8px 32px rgba(44,26,14,0.18);
-  --shadow-gold: 0 4px 24px rgba(201,150,43,0.25);
-  --radius: 16px;
-  --radius-sm: 8px;
-  --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
+/* ============================================================
+   GAYATRI RESTAURANT & BANQUET — premium site styles
+   Token system: royal green / antique gold / cream / dark brown
+   Signature motif: the "Gayatri lotus" line mark — used in the
+   logo, hero, section dividers and footer.
+   ============================================================ */
+
+:root{
+  --green-950:#0a2a1f;
+  --green-900:#0f3d2e;
+  --green-700:#1a5c45;
+  --green-600:#21724f;
+  --gold-600:#a9821e;
+  --gold-500:#c9a227;
+  --gold-300:#e3c873;
+  --gold-100:#f6e9c2;
+  --cream:#fbf5e8;
+  --cream-2:#f3ead2;
+  --brown-900:#241409;
+  --brown-700:#3b2412;
+  --ink:#231a12;
+  --ink-soft:#5b4d3c;
+  --white:#ffffff;
+  --shadow-lg: 0 30px 70px -28px rgba(10,42,31,.45);
+  --shadow-md: 0 14px 34px -16px rgba(36,20,9,.28);
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --container: 1180px;
+  --nav-h: 84px;
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Jost', sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+ul{list-style:none;}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+input,select,textarea{font-family:inherit;font-size:1rem;}
+section{scroll-margin-top:var(--nav-h);}
 
-html { scroll-behavior: smooth; font-size: 16px; }
+h1,h2,h3,h4{
+  font-family:'Marcellus', serif;
+  font-weight:400;
+  line-height:1.15;
+  color:var(--brown-900);
+}
+.gu{font-family:'Noto Serif Gujarati', serif;}
 
-body {
-  font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
-  color: var(--text-main);
-  overflow-x: hidden;
-}
+:focus-visible{outline:2px solid var(--gold-500);outline-offset:3px;border-radius:4px;}
 
-/* ─── TYPOGRAPHY ─── */
-.display { font-family: 'Cormorant Garamond', serif; }
-.gujarati { font-family: 'Noto Sans Gujarati', sans-serif; }
+.container{max-width:var(--container);margin:0 auto;padding:0 28px;}
+.section-pad{padding:118px 0;}
+@media (max-width:720px){.section-pad{padding:80px 0;}}
 
-h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; line-height: 1.15; }
+/* ---------- type helpers ---------- */
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold-600);font-weight:500;margin-bottom:18px;
+}
+.eyebrow::before,.eyebrow::after{content:'';width:26px;height:1px;background:var(--gold-500);display:inline-block;}
+.eyebrow--on-dark{color:var(--gold-300);}
+.eyebrow--center{justify-content:center;margin-left:auto;margin-right:auto;}
+.head-row{max-width:680px;margin-bottom:54px;}
+.head-row--center{margin-left:auto;margin-right:auto;text-align:center;}
+h2.h2{font-size:clamp(2rem,3.6vw,2.85rem);margin-bottom:16px;}
+h2.h2 em{font-style:italic;color:var(--gold-600);}
+.lede{font-size:1.08rem;color:var(--ink-soft);max-width:560px;}
+.head-row--center .lede{margin-left:auto;margin-right:auto;}
 
-/* ─── PATTERNS & DECORATIONS ─── */
-.mandala-bg {
-  position: absolute; pointer-events: none; opacity: 0.04;
-  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='60' cy='60' r='50' fill='none' stroke='%23C9962B' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='38' fill='none' stroke='%23C9962B' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='25' fill='none' stroke='%23C9962B' stroke-width='1'/%3E%3Cpath d='M60 10 L65 50 L60 60 L55 50 Z' fill='%23C9962B'/%3E%3Cpath d='M60 110 L65 70 L60 60 L55 70 Z' fill='%23C9962B'/%3E%3Cpath d='M10 60 L50 65 L60 60 L50 55 Z' fill='%23C9962B'/%3E%3Cpath d='M110 60 L70 65 L60 60 L70 55 Z' fill='%23C9962B'/%3E%3C/svg%3E");
-  background-size: 120px 120px;
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:999px;
+  font-size:.92rem;letter-spacing:.05em;font-weight:500;
+  transition:transform .35s ease, box-shadow .35s ease, background .35s ease, color .35s ease;
+  white-space:nowrap;
 }
+.btn svg{width:17px;height:17px;}
+.btn--gold{background:linear-gradient(135deg,var(--gold-300),var(--gold-600));color:var(--brown-900);box-shadow:0 14px 30px -10px rgba(169,130,30,.55);}
+.btn--gold:hover{transform:translateY(-3px);box-shadow:0 20px 36px -10px rgba(169,130,30,.65);}
+.btn--outline{border:1.4px solid var(--gold-400,var(--gold-500));color:var(--gold-300);background:rgba(255,255,255,.03);}
+.btn--outline:hover{background:rgba(227,200,115,.12);transform:translateY(-3px);}
+.btn--outline-dark{border:1.4px solid var(--green-700);color:var(--green-900);}
+.btn--outline-dark:hover{background:var(--green-900);color:var(--cream);transform:translateY(-3px);}
+.btn--ghost{padding:10px 0;color:var(--green-900);border-bottom:1px solid var(--green-900);border-radius:0;}
+.btn--block{width:100%;justify-content:center;}
+.btn--sm{padding:11px 22px;font-size:.82rem;}
 
-/* ─── NAV ─── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  padding: 0 2rem;
-  transition: var(--transition);
-  background: transparent;
-}
-nav.scrolled {
-  background: rgba(44, 26, 14, 0.97);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 2px 20px rgba(0,0,0,0.3);
-}
-.nav-inner {
-  max-width: 1200px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: space-between;
-  height: 72px;
-}
-.nav-logo {
-  display: flex; flex-direction: column; line-height: 1;
-  text-decoration: none;
-}
-.nav-logo .name-en {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.35rem; font-weight: 700;
-  color: var(--gold-light); letter-spacing: 0.02em;
-}
-.nav-logo .name-gu {
-  font-family: 'Noto Sans Gujarati', sans-serif;
-  font-size: 0.75rem; color: var(--saffron-light);
-  opacity: 0.9;
-}
-.nav-links {
-  display: flex; gap: 2rem; list-style: none; align-items: center;
-}
-.nav-links a {
-  color: rgba(255,255,255,0.85); text-decoration: none;
-  font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em;
-  text-transform: uppercase; transition: color 0.2s;
-  position: relative;
-}
-.nav-links a::after {
-  content: ''; position: absolute; bottom: -4px; left: 0; right: 100%;
-  height: 2px; background: var(--saffron); transition: right 0.3s ease;
-}
-.nav-links a:hover { color: var(--gold-light); }
-.nav-links a:hover::after { right: 0; }
-.nav-cta {
-  background: linear-gradient(135deg, var(--saffron), var(--gold));
-  color: white !important; padding: 0.5rem 1.25rem;
-  border-radius: 50px; font-weight: 600 !important;
-}
-.nav-cta::after { display: none !important; }
-.nav-hamburger {
-  display: none; flex-direction: column; gap: 5px;
-  cursor: pointer; background: none; border: none; padding: 4px;
-}
-.nav-hamburger span {
-  display: block; width: 24px; height: 2px;
-  background: var(--gold-light); border-radius: 2px;
-  transition: var(--transition);
-}
-.mobile-menu {
-  display: none; flex-direction: column;
-  background: var(--brown-deep); padding: 1.5rem 2rem;
-  position: fixed; top: 72px; left: 0; right: 0; z-index: 999;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  color: var(--cream); text-decoration: none; padding: 0.75rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  font-size: 1.05rem; font-weight: 500;
-}
+/* ---------- lotus signature mark ---------- */
+.lotus{color:var(--gold-500);}
+.divider{display:flex;align-items:center;justify-content:center;gap:14px;margin:0 auto 46px;width:fit-content;}
+.divider .line{width:64px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-500));}
+.divider .line.r{background:linear-gradient(90deg,var(--gold-500),transparent);}
+.divider svg{width:30px;height:30px;}
 
-/* ─── HERO ─── */
-.hero {
-  position: relative; height: 100vh; min-height: 600px;
-  display: flex; align-items: center; overflow: hidden;
+/* ---------- nav ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  height:var(--nav-h);display:flex;align-items:center;
+  background:linear-gradient(180deg,rgba(10,42,31,.78),rgba(10,42,31,.4));
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(227,200,115,.18);
+  transition:background .4s ease, box-shadow .4s ease, height .3s ease;
 }
-.hero-bg {
-  position: absolute; inset: 0;
-  background: 
-    linear-gradient(180deg, rgba(44,26,14,0.55) 0%, rgba(27,58,45,0.4) 50%, rgba(44,26,14,0.75) 100%),
-    url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&q=80') center/cover no-repeat;
+.nav.is-scrolled{background:rgba(9,35,26,.94);box-shadow:0 12px 30px -14px rgba(0,0,0,.5);height:72px;}
+.nav .container{display:flex;align-items:center;justify-content:space-between;}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{width:46px;height:46px;border-radius:50%;border:1.4px solid var(--gold-500);display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 30% 25%,rgba(227,200,115,.18),transparent 70%);}
+.brand-mark svg{width:24px;height:24px;color:var(--gold-300);}
+.brand-text{display:flex;flex-direction:column;line-height:1.1;}
+.brand-text strong{font-family:'Marcellus',serif;font-size:1.18rem;color:var(--cream);letter-spacing:.01em;}
+.brand-text span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-300);margin-top:3px;}
+
+.nav-links{display:flex;align-items:center;gap:34px;}
+.nav-links a{font-size:.86rem;letter-spacing:.03em;color:rgba(251,245,232,.86);position:relative;padding:6px 0;}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--gold-400,var(--gold-500));transition:width .3s ease;}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-links a.active{color:var(--gold-300);}
+.nav-cta{display:flex;align-items:center;gap:14px;}
+.nav-cta .btn{padding:11px 22px;font-size:.8rem;}
+.call-pill{display:flex;align-items:center;gap:8px;color:var(--gold-300);font-size:.84rem;}
+.call-pill svg{width:16px;height:16px;}
+
+.hamburger{display:none;width:42px;height:42px;border-radius:50%;border:1px solid rgba(227,200,115,.4);align-items:center;justify-content:center;}
+.hamburger svg{width:18px;height:18px;color:var(--gold-300);}
+
+.mobile-drawer{
+  position:fixed;inset:0;z-index:300;background:linear-gradient(160deg,var(--green-950),var(--brown-900));
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;
+  transform:translateY(-110%);transition:transform .5s cubic-bezier(.6,0,.2,1);
 }
-.hero-pattern {
-  position: absolute; inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle cx='30' cy='30' r='20' stroke='rgba(201,150,43,0.12)' stroke-width='1'/%3E%3Ccircle cx='30' cy='30' r='12' stroke='rgba(201,150,43,0.08)' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
-  background-size: 60px 60px;
-}
-.hero-content {
-  position: relative; z-index: 1;
-  max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-  text-align: center; color: white;
-  padding-top: 80px;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 0.75rem;
-  background: rgba(201,150,43,0.2); border: 1px solid rgba(201,150,43,0.4);
-  padding: 0.4rem 1.25rem; border-radius: 50px;
-  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--gold-light);
-  margin-bottom: 1.5rem;
-  animation: fadeDown 0.8s ease forwards;
-}
-.hero-eyebrow::before, .hero-eyebrow::after { content: '✦'; font-size: 0.7rem; }
-.hero h1 {
-  font-size: clamp(2.4rem, 6vw, 4.5rem); font-weight: 700;
-  line-height: 1.1; margin-bottom: 0.5rem;
-  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
-  animation: fadeUp 0.9s 0.1s ease both;
-}
-.hero h1 span { color: var(--gold-light); }
-.hero-gu {
-  font-family: 'Noto Sans Gujarati', sans-serif;
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  color: var(--saffron-light); margin-bottom: 1rem;
-  animation: fadeUp 0.9s 0.2s ease both;
-}
-.hero-sub {
-  font-size: clamp(0.9rem, 1.8vw, 1.1rem);
-  color: rgba(255,255,255,0.85); letter-spacing: 0.05em;
-  margin-bottom: 2.5rem;
-  animation: fadeUp 0.9s 0.3s ease both;
-}
-.hero-sub span { color: var(--gold-light); }
-.hero-rating {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  background: rgba(255,255,255,0.1); padding: 0.5rem 1.25rem;
-  border-radius: 50px; font-size: 0.9rem; margin-bottom: 2.5rem;
-  animation: fadeUp 0.9s 0.35s ease both;
-}
-.stars { color: var(--gold-light); }
-.hero-buttons {
-  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
-  animation: fadeUp 0.9s 0.45s ease both;
-}
-.btn {
-  display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: 0.8rem 1.8rem; border-radius: 50px;
-  font-weight: 600; font-size: 0.95rem; cursor: pointer;
-  text-decoration: none; border: none; transition: var(--transition);
-  letter-spacing: 0.03em;
-}
-.btn-primary {
-  background: linear-gradient(135deg, var(--saffron) 0%, var(--gold) 100%);
-  color: white; box-shadow: 0 4px 20px rgba(232,103,10,0.4);
-}
-.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(232,103,10,0.5); }
-.btn-outline {
-  background: rgba(255,255,255,0.12); color: white;
-  border: 1.5px solid rgba(255,255,255,0.5);
-  backdrop-filter: blur(8px);
-}
-.btn-outline:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
-.btn-green {
-  background: var(--green-mid); color: white;
-  border: 1.5px solid var(--green-dark);
-}
-.btn-green:hover { background: var(--green-dark); transform: translateY(-2px); }
-.hero-scroll {
-  position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
-  color: rgba(255,255,255,0.6); font-size: 0.75rem; letter-spacing: 0.1em;
-  text-transform: uppercase; animation: bounce 2s infinite;
-  cursor: pointer;
-}
-.hero-scroll::after {
-  content: ''; display: block; width: 1.5px; height: 36px;
-  background: linear-gradient(to bottom, rgba(201,150,43,0.8), transparent);
+.mobile-drawer.is-open{transform:translateY(0);}
+.mobile-drawer a{font-family:'Marcellus',serif;font-size:1.5rem;color:var(--cream);}
+.mobile-drawer .btn{margin-top:10px;}
+.drawer-close{position:absolute;top:26px;right:28px;width:42px;height:42px;border-radius:50%;border:1px solid rgba(227,200,115,.4);display:flex;align-items:center;justify-content:center;}
+.drawer-close svg{width:18px;height:18px;color:var(--gold-300);}
+
+@media (max-width:900px){
+  .nav-links,.nav-cta .btn--outline,.call-pill{display:none;}
+  .hamburger{display:flex;}
 }
 
-/* ─── SECTION STRUCTURE ─── */
-section { position: relative; overflow: hidden; }
-.section-inner { max-width: 1200px; margin: 0 auto; padding: 5rem 2rem; }
-.section-label {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em;
-  text-transform: uppercase; color: var(--saffron);
-  margin-bottom: 1rem;
+/* ---------- hero ---------- */
+.hero{
+  position:relative;min-height:100svh;min-height:100vh;
+  display:flex;align-items:center;
+  background:
+    radial-gradient(1100px 700px at 86% 8%, rgba(227,200,115,.16), transparent 60%),
+    radial-gradient(900px 600px at 10% 100%, rgba(36,20,9,.55), transparent 60%),
+    linear-gradient(155deg,var(--green-950) 0%,var(--green-900) 48%,var(--brown-900) 120%);
+  overflow:hidden;
+  padding-top:var(--nav-h);
 }
-.section-label::before, .section-label::after {
-  content: ''; flex: 1; height: 1px; min-width: 24px;
-  background: var(--saffron); opacity: 0.5;
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background-image:radial-gradient(rgba(227,200,115,.35) 1px, transparent 1.6px);
+  background-size:26px 26px;opacity:.25;pointer-events:none;
 }
-.section-title {
-  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700;
-  color: var(--brown-deep); line-height: 1.2; margin-bottom: 1rem;
+.hero-frame{position:absolute;width:64px;height:64px;border-color:var(--gold-500);opacity:.65;pointer-events:none;}
+.hero-frame.tl{top:34px;left:24px;border-top:1.5px solid;border-left:1.5px solid;}
+.hero-frame.br{bottom:34px;right:24px;border-bottom:1.5px solid;border-right:1.5px solid;}
+.hero-lotus-big{position:absolute;top:50%;right:-60px;width:560px;height:560px;transform:translateY(-50%);opacity:.16;color:var(--gold-300);pointer-events:none;}
+@media (max-width:1100px){.hero-lotus-big{opacity:.09;width:420px;height:420px;}}
+@media (max-width:720px){.hero-lotus-big{display:none;}}
+
+.hero .container{position:relative;z-index:2;}
+.hero-inner{max-width:760px;}
+.hero-stat-row{display:flex;flex-wrap:wrap;gap:14px;margin:30px 0 38px;}
+.stat-pill{
+  display:flex;align-items:center;gap:9px;
+  padding:10px 18px;border-radius:999px;
+  background:rgba(251,245,232,.06);border:1px solid rgba(227,200,115,.3);
+  font-size:.85rem;color:var(--cream);
 }
-.section-title em { color: var(--saffron); font-style: normal; }
-.gold-divider {
-  width: 60px; height: 3px;
-  background: linear-gradient(90deg, var(--saffron), var(--gold));
-  border-radius: 2px; margin: 0 auto 2.5rem;
+.stat-pill svg{width:16px;height:16px;color:var(--gold-300);}
+.stat-pill strong{color:var(--gold-300);font-weight:600;}
+
+.hero h1{font-size:clamp(2.4rem,5.1vw,3.85rem);color:var(--cream);max-width:680px;}
+.hero h1 em{font-style:italic;color:var(--gold-300);}
+.hero .gu-line{font-size:clamp(1.15rem,2.4vw,1.55rem);color:var(--gold-300);margin-top:16px;font-weight:500;}
+.hero .sub{margin-top:22px;color:rgba(251,245,232,.82);font-size:1.08rem;max-width:540px;}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:38px;}
+
+.scroll-cue{position:absolute;left:50%;bottom:30px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--gold-300);opacity:.8;z-index:2;}
+.scroll-cue span{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;}
+.scroll-cue svg{width:14px;height:14px;animation:bob 2.2s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(7px);}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s ease;}
+.reveal.is-visible{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none;}
+  .scroll-cue svg{animation:none;}
 }
 
-/* ─── ABOUT ─── */
-.about { background: var(--green-dark); }
-.about .mandala-bg { inset: 0; width: 100%; height: 100%; opacity: 0.06; }
-.about .section-title { color: var(--cream); }
-.about .section-label { color: var(--gold-light); }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.about-text { color: rgba(255,255,255,0.85); line-height: 1.8; }
-.about-text p { font-size: 1.05rem; margin-bottom: 1.25rem; }
-.about-cards {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
-  margin-top: 2.5rem;
+/* ---------- about ---------- */
+.about{background:var(--cream);}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center;}
+.about-visual{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:4/5;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(227,200,115,.35), transparent 55%),
+    linear-gradient(150deg,var(--green-900),var(--green-950) 70%);
+  border:1px solid rgba(201,162,39,.5);box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;justify-content:center;
 }
-.about-card {
-  background: rgba(255,255,255,0.07); border: 1px solid rgba(201,150,43,0.2);
-  border-radius: var(--radius); padding: 1.5rem;
-  transition: var(--transition); backdrop-filter: blur(4px);
-}
-.about-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); border-color: rgba(201,150,43,0.5); }
-.about-card .icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
-.about-card .stat { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 700; color: var(--gold-light); }
-.about-card .label { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
-.about-image { position: relative; }
-.about-image img {
-  width: 100%; border-radius: var(--radius);
-  box-shadow: var(--shadow-warm);
-  object-fit: cover; height: 420px;
-}
-.about-badge {
-  position: absolute; bottom: -1.5rem; left: -1.5rem;
-  background: linear-gradient(135deg, var(--saffron), var(--gold));
-  color: white; padding: 1rem 1.5rem; border-radius: var(--radius);
-  box-shadow: var(--shadow-gold); text-align: center;
-}
-.about-badge .big { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 700; display: block; line-height: 1; }
-.about-badge .small { font-size: 0.75rem; opacity: 0.9; }
+.about-visual svg{width:46%;color:var(--gold-300);opacity:.9;}
+.about-visual .tag{position:absolute;bottom:22px;left:22px;right:22px;background:rgba(10,42,31,.55);backdrop-filter:blur(6px);border:1px solid rgba(227,200,115,.3);border-radius:12px;padding:14px 16px;color:var(--cream);font-size:.82rem;letter-spacing:.02em;}
+.about-visual .tag strong{color:var(--gold-300);}
 
-/* ─── MENU ─── */
-.menu-section { background: var(--cream); }
-.menu-tabs {
-  display: flex; gap: 0.75rem; flex-wrap: wrap;
-  justify-content: center; margin-bottom: 2.5rem;
+.about-text p{color:var(--ink-soft);margin-bottom:16px;font-size:1.03rem;}
+.feature-chip-row{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:30px;}
+.feature-chip{
+  display:flex;align-items:center;gap:12px;padding:16px 16px;
+  background:var(--white);border-radius:14px;border-top:2px solid var(--gold-500);
+  box-shadow:var(--shadow-md);font-size:.92rem;font-weight:500;color:var(--brown-900);
 }
-.tab-btn {
-  padding: 0.55rem 1.25rem; border-radius: 50px; border: 1.5px solid var(--cream-dark);
-  background: white; cursor: pointer; font-size: 0.88rem; font-weight: 500;
-  color: var(--brown-mid); transition: var(--transition); font-family: 'DM Sans', sans-serif;
-}
-.tab-btn.active, .tab-btn:hover {
-  background: linear-gradient(135deg, var(--saffron), var(--gold));
-  color: white; border-color: transparent;
-  box-shadow: 0 4px 16px rgba(232,103,10,0.3);
-}
-.menu-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.25rem;
-}
-.menu-card {
-  background: white; border-radius: var(--radius); overflow: hidden;
-  box-shadow: 0 2px 16px rgba(44,26,14,0.08);
-  transition: var(--transition); border: 1px solid rgba(44,26,14,0.06);
-  display: none;
-}
-.menu-card.visible { display: block; }
-.menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-warm); }
-.menu-card-body { padding: 1.25rem; }
-.menu-card .dish-name {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.25rem; font-weight: 600; color: var(--brown-deep); margin-bottom: 0.35rem;
-}
-.menu-card .dish-desc { font-size: 0.83rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 0.75rem; }
-.menu-card .dish-footer { display: flex; justify-content: space-between; align-items: center; }
-.menu-card .price { font-weight: 700; color: var(--saffron); font-size: 1rem; }
-.veg-badge {
-  width: 18px; height: 18px; border: 1.5px solid #2D7A38;
-  border-radius: 3px; display: inline-flex; align-items: center; justify-content: center;
-}
-.veg-badge::after { content: ''; width: 8px; height: 8px; background: #2D7A38; border-radius: 50%; }
-.menu-cta { text-align: center; margin-top: 3rem; }
+.feature-chip svg{width:22px;height:22px;color:var(--green-700);flex-shrink:0;}
+.feature-chip.wide{grid-column:1/-1;}
 
-/* ─── BANQUET ─── */
-.banquet { background: linear-gradient(135deg, var(--brown-deep) 0%, var(--brown-mid) 100%); }
-.banquet .mandala-bg { inset: 0; width: 100%; height: 100%; }
-.banquet .section-title { color: var(--cream); }
-.banquet .section-label { color: var(--gold-light); }
-.banquet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
-.banquet-text { color: rgba(255,255,255,0.85); }
-.banquet-text p { line-height: 1.8; margin-bottom: 2rem; font-size: 1.05rem; }
-.banquet-features {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-  margin-bottom: 2.5rem;
-}
-.banquet-feat {
-  display: flex; align-items: center; gap: 0.75rem;
-  background: rgba(255,255,255,0.07); padding: 0.85rem 1rem;
-  border-radius: var(--radius-sm); border: 1px solid rgba(201,150,43,0.2);
-  font-size: 0.9rem; color: rgba(255,255,255,0.85);
-  transition: var(--transition);
-}
-.banquet-feat:hover { background: rgba(201,150,43,0.15); }
-.banquet-feat .fi { font-size: 1.3rem; }
-.banquet-image {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
-}
-.banquet-img {
-  border-radius: var(--radius); overflow: hidden; position: relative;
-}
-.banquet-img img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s; }
-.banquet-img:hover img { transform: scale(1.06); }
-.banquet-img:first-child { grid-column: 1 / -1; }
-.banquet-img:first-child img { height: 280px; }
+@media (max-width:900px){.about-grid{grid-template-columns:1fr;gap:40px;}.feature-chip-row{grid-template-columns:1fr 1fr;}}
 
-/* ─── GALLERY ─── */
-.gallery-section { background: var(--cream-dark); }
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 280px);
-  gap: 1rem;
+/* ---------- why choose us ---------- */
+.why{background:var(--white);position:relative;}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+.why-card{
+  padding:34px 26px;border-radius:var(--radius-md);background:var(--cream);
+  border-top:3px solid var(--gold-500);transition:transform .4s ease, box-shadow .4s ease;
 }
-.gal-item {
-  border-radius: var(--radius); overflow: hidden;
-  position: relative; cursor: pointer;
-}
-.gal-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-.gal-item:hover img { transform: scale(1.08); }
-.gal-item:nth-child(1) { grid-column: 1; grid-row: 1 / 3; }
-.gal-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(44,26,14,0.7) 0%, transparent 60%);
-  opacity: 0; transition: opacity 0.3s;
-  display: flex; align-items: flex-end; padding: 1.25rem;
-}
-.gal-item:hover .gal-overlay { opacity: 1; }
-.gal-overlay span { color: white; font-size: 0.9rem; font-weight: 500; }
+.why-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);}
+.why-card svg{width:30px;height:30px;color:var(--green-700);margin-bottom:18px;}
+.why-card h3{font-size:1.12rem;margin-bottom:8px;}
+.why-card p{color:var(--ink-soft);font-size:.92rem;}
+@media (max-width:900px){.why-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.why-grid{grid-template-columns:1fr;}}
 
-/* ─── REVIEWS ─── */
-.reviews-section { background: var(--green-dark); }
-.reviews-section .section-title { color: var(--cream); }
-.reviews-section .section-label { color: var(--gold-light); }
-.rating-hero {
-  display: flex; flex-direction: column; align-items: center;
-  margin-bottom: 3rem;
+/* ---------- menu ---------- */
+.menu-sec{background:var(--cream-2);position:relative;}
+.tab-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-bottom:48px;}
+.tab-btn{
+  padding:12px 24px;border-radius:999px;font-size:.88rem;letter-spacing:.02em;
+  border:1.3px solid rgba(36,20,9,.18);color:var(--ink-soft);background:var(--white);
+  transition:all .3s ease;
 }
-.rating-big {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 5rem; font-weight: 700;
-  color: var(--gold-light); line-height: 1;
-}
-.rating-stars { font-size: 1.8rem; color: var(--gold-light); margin: 0.25rem 0; }
-.rating-count { color: rgba(255,255,255,0.6); font-size: 0.9rem; }
-.reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
-.review-card {
-  background: rgba(255,255,255,0.07); border: 1px solid rgba(201,150,43,0.2);
-  border-radius: var(--radius); padding: 1.75rem;
-  transition: var(--transition);
-}
-.review-card:hover { background: rgba(255,255,255,0.12); transform: translateY(-3px); }
-.review-stars { color: var(--gold-light); font-size: 1.1rem; margin-bottom: 1rem; }
-.review-text {
-  color: rgba(255,255,255,0.85); font-size: 0.95rem;
-  line-height: 1.7; margin-bottom: 1.25rem;
-  font-style: italic;
-}
-.review-text::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); line-height: 0; vertical-align: -0.75rem; margin-right: 0.2rem; }
-.reviewer {
-  display: flex; align-items: center; gap: 0.75rem;
-}
-.reviewer-avatar {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--saffron), var(--gold));
-  display: flex; align-items: center; justify-content: center;
-  font-weight: 700; color: white; font-size: 0.85rem;
-}
-.reviewer-name { font-weight: 600; color: var(--cream); font-size: 0.9rem; }
-.reviewer-date { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
+.tab-btn.active{background:var(--green-900);color:var(--cream);border-color:var(--green-900);box-shadow:var(--shadow-md);}
+.menu-panel{display:none;}
+.menu-panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;animation:fadeUp .5s ease;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+@media (max-width:900px){.menu-panel.active{grid-template-columns:1fr 1fr;}}
+@media (max-width:600px){.menu-panel.active{grid-template-columns:1fr;}}
 
-/* ─── LOCATION ─── */
-.location-section { background: var(--cream); }
-.location-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-.map-embed {
-  border-radius: var(--radius); overflow: hidden;
-  box-shadow: var(--shadow-warm); height: 380px;
-  background: var(--cream-dark); display: flex; flex-direction: column;
-  align-items: center; justify-content: center; gap: 1rem;
-  border: 2px solid var(--cream-dark);
-  position: relative;
+.dish-card{background:var(--white);border-radius:var(--radius-md);overflow:hidden;box-shadow:var(--shadow-md);transition:transform .35s ease;}
+.dish-card:hover{transform:translateY(-6px);}
+.dish-media{
+  height:150px;display:flex;align-items:center;justify-content:center;position:relative;
+  background:linear-gradient(135deg,var(--green-800,var(--green-700)),var(--green-950));
 }
-.map-embed iframe { width: 100%; height: 100%; border: none; }
-.address-block { margin-bottom: 2rem; }
-.address-block h3 {
-  font-size: 1.6rem; margin-bottom: 1rem; color: var(--brown-deep);
-}
-.addr-line {
-  display: flex; gap: 0.75rem; align-items: flex-start;
-  font-size: 1rem; line-height: 1.6; color: var(--text-muted); margin-bottom: 0.5rem;
-}
-.addr-line .icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
-.info-row {
-  display: flex; align-items: center; gap: 0.75rem;
-  padding: 0.9rem 1rem; background: white; border-radius: var(--radius-sm);
-  margin-bottom: 0.75rem; box-shadow: 0 2px 8px rgba(44,26,14,0.07);
-}
-.info-row .icon { font-size: 1.2rem; }
-.info-row .detail { font-size: 0.9rem; color: var(--text-muted); }
-.info-row .val { font-weight: 600; color: var(--brown-deep); font-size: 0.95rem; }
-.map-btns { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
-.btn-saffron {
-  background: linear-gradient(135deg, var(--saffron), var(--gold));
-  color: white; box-shadow: 0 4px 16px rgba(232,103,10,0.35);
-}
-.btn-saffron:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,103,10,0.45); }
-.btn-dark {
-  background: var(--brown-deep); color: white;
-}
-.btn-dark:hover { background: var(--brown-mid); transform: translateY(-2px); }
+.dish-media svg{width:50px;height:50px;color:var(--gold-300);opacity:.95;}
+.dish-media .badge{position:absolute;top:12px;right:12px;background:var(--gold-500);color:var(--brown-900);font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;font-weight:600;}
+.dish-body{padding:18px 20px 22px;}
+.dish-body h4{font-size:1.04rem;margin-bottom:6px;}
+.dish-body p{font-size:.86rem;color:var(--ink-soft);}
+.menu-cta{text-align:center;margin-top:50px;}
 
-/* ─── CONTACT ─── */
-.contact-section { background: var(--brown-deep); }
-.contact-section .mandala-bg { inset: 0; width: 100%; height: 100%; }
-.contact-section .section-title { color: var(--cream); }
-.contact-section .section-label { color: var(--gold-light); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; align-items: start; }
-.contact-info { color: rgba(255,255,255,0.85); }
-.contact-info p { line-height: 1.8; margin-bottom: 2rem; }
-.contact-detail {
-  display: flex; align-items: center; gap: 1rem;
-  padding: 1rem 1.25rem; background: rgba(255,255,255,0.07);
-  border-radius: var(--radius-sm); margin-bottom: 1rem;
-  border: 1px solid rgba(201,150,43,0.2);
+/* full menu modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(10,20,15,.72);backdrop-filter:blur(4px);z-index:500;display:none;align-items:center;justify-content:center;padding:24px;}
+.modal-overlay.is-open{display:flex;}
+.modal-box{background:var(--cream);border-radius:var(--radius-lg);max-width:760px;width:100%;max-height:86vh;overflow-y:auto;padding:40px 36px;position:relative;box-shadow:var(--shadow-lg);border:1px solid rgba(201,162,39,.4);}
+.modal-close{position:absolute;top:20px;right:20px;width:38px;height:38px;border-radius:50%;background:var(--white);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow-md);}
+.modal-close svg{width:16px;height:16px;}
+.modal-note{font-size:.84rem;color:var(--ink-soft);background:var(--gold-100);border-radius:10px;padding:12px 16px;margin-bottom:24px;}
+.acc-item{border-bottom:1px solid rgba(36,20,9,.12);}
+.acc-item summary{
+  list-style:none;display:flex;align-items:center;justify-content:space-between;
+  padding:16px 2px;font-family:'Marcellus',serif;font-size:1.08rem;cursor:pointer;color:var(--brown-900);
 }
-.contact-detail .icon { font-size: 1.4rem; }
-.contact-detail .cd-val { font-weight: 600; color: var(--gold-light); font-size: 0.95rem; }
-.contact-detail .cd-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); }
-.booking-form { background: rgba(255,255,255,0.05); border-radius: var(--radius); padding: 2rem; border: 1px solid rgba(201,150,43,0.2); }
-.booking-form h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--cream); margin-bottom: 1.75rem; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.form-group { margin-bottom: 1.25rem; }
-.form-group label { display: block; font-size: 0.82rem; font-weight: 500; color: rgba(255,255,255,0.65); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.08em; }
-.form-group input, .form-group select, .form-group textarea {
-  width: 100%; padding: 0.8rem 1rem;
-  background: rgba(255,255,255,0.08); border: 1.5px solid rgba(201,150,43,0.2);
-  border-radius: var(--radius-sm); color: white; font-family: 'DM Sans', sans-serif;
-  font-size: 0.95rem; transition: border-color 0.2s;
-  -webkit-appearance: none;
-}
-.form-group select option { background: var(--brown-deep); color: white; }
-.form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.35); }
-.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-  outline: none; border-color: var(--gold);
-  background: rgba(255,255,255,0.12);
-}
-.form-group textarea { resize: vertical; min-height: 90px; }
+.acc-item summary::-webkit-details-marker{display:none;}
+.acc-item summary svg{width:16px;height:16px;color:var(--gold-600);transition:transform .3s ease;}
+.acc-item[open] summary svg{transform:rotate(180deg);}
+.acc-list{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;padding:4px 2px 20px;font-size:.88rem;color:var(--ink-soft);}
+@media (max-width:560px){.acc-list{grid-template-columns:1fr;}}
 
-/* ─── FOOTER ─── */
-footer { background: #1A0E07; padding: 3.5rem 2rem 1.5rem; }
-.footer-inner { max-width: 1200px; margin: 0 auto; }
-.footer-top { display: grid; grid-template-columns: 1.8fr 1fr 1fr 1.2fr; gap: 3rem; margin-bottom: 3rem; }
-.footer-brand .name { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: var(--gold-light); margin-bottom: 0.3rem; }
-.footer-brand .gu { font-family: 'Noto Sans Gujarati', sans-serif; font-size: 0.8rem; color: var(--saffron-light); margin-bottom: 1rem; }
-.footer-brand p { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 1.25rem; }
-.footer-social { display: flex; gap: 0.75rem; }
-.soc-btn {
-  width: 38px; height: 38px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7);
-  text-decoration: none; font-size: 1rem; transition: var(--transition);
-}
-.soc-btn:hover { background: var(--saffron); border-color: var(--saffron); color: white; transform: translateY(-2px); }
-.footer-col h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--gold-light); margin-bottom: 1.25rem; }
-.footer-col ul { list-style: none; }
-.footer-col ul li { margin-bottom: 0.6rem; }
-.footer-col ul li a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
-.footer-col ul li a:hover { color: var(--saffron-light); }
-.footer-col .fc-item { display: flex; gap: 0.6rem; align-items: flex-start; margin-bottom: 0.75rem; }
-.footer-col .fc-item .icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
-.footer-col .fc-item span { font-size: 0.85rem; color: rgba(255,255,255,0.55); line-height: 1.5; }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem;
-  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-}
-.footer-bottom p { font-size: 0.82rem; color: rgba(255,255,255,0.4); }
-.footer-bottom a { color: var(--saffron-light); text-decoration: none; }
+/* ---------- banquet ---------- */
+.banquet{background:linear-gradient(165deg,var(--green-950),var(--green-900) 60%,var(--brown-900) 130%);color:var(--cream);position:relative;overflow:hidden;}
+.banquet::before{content:'';position:absolute;inset:0;background-image:radial-gradient(rgba(227,200,115,.3) 1px, transparent 1.6px);background-size:24px 24px;opacity:.2;}
+.banquet .container{position:relative;z-index:2;}
+.banquet-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;}
+.banquet h2{color:var(--cream);}
+.banquet .lede{color:rgba(251,245,232,.78);}
+.perfect-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:32px;}
+.perfect-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:rgba(251,245,232,.05);border:1px solid rgba(227,200,115,.22);border-radius:12px;font-size:.9rem;}
+.perfect-item svg{width:22px;height:22px;color:var(--gold-300);flex-shrink:0;}
 
-/* ─── FLOATING WHATSAPP ─── */
-.wa-float {
-  position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
-  width: 58px; height: 58px; background: #25D366; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 24px rgba(37,211,102,0.5); cursor: pointer;
-  text-decoration: none; transition: var(--transition);
-  animation: pulse-wa 2.5s infinite;
-}
-.wa-float:hover { transform: scale(1.1); box-shadow: 0 8px 32px rgba(37,211,102,0.6); }
-.wa-float svg { width: 30px; height: 30px; fill: white; }
+.feature-list{margin-top:8px;}
+.feature-list li{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid rgba(227,200,115,.16);font-size:.96rem;}
+.feature-list li svg{width:18px;height:18px;color:var(--gold-300);flex-shrink:0;}
+.banquet-card{background:rgba(251,245,232,.05);border:1px solid rgba(227,200,115,.25);border-radius:var(--radius-lg);padding:36px 32px;}
+.banquet-card h3{color:var(--gold-300);font-size:1.3rem;margin-bottom:6px;}
+.banquet-card>p{color:rgba(251,245,232,.7);font-size:.92rem;margin-bottom:6px;}
+@media (max-width:900px){.banquet-grid{grid-template-columns:1fr;gap:40px;}}
 
-/* ─── ANIMATIONS ─── */
-@keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(8px); } }
-@keyframes pulse-wa { 0%, 100% { box-shadow: 0 4px 24px rgba(37,211,102,0.5); } 50% { box-shadow: 0 4px 40px rgba(37,211,102,0.8); } }
-@keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
+/* ---------- gallery ---------- */
+.gallery{background:var(--cream);}
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:160px;gap:16px;}
+.g-item{position:relative;border-radius:14px;overflow:hidden;display:flex;align-items:flex-end;padding:18px;color:var(--cream);isolation:isolate;}
+.g-item::before{content:'';position:absolute;inset:0;z-index:-1;transition:transform .5s ease;}
+.g-item:hover::before{transform:scale(1.08);}
+.g-item::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(10,20,15,.78));z-index:-1;}
+.g-item span{position:relative;font-family:'Marcellus',serif;font-size:1.02rem;display:flex;align-items:center;gap:10px;}
+.g-item svg{width:20px;height:20px;color:var(--gold-300);}
+.g-item.tall{grid-row:span 2;}
+.g1::before{background:linear-gradient(135deg,#1a5c45,#0a2a1f);}
+.g2::before{background:linear-gradient(135deg,#c9a227,#3b2412);}
+.g3::before{background:linear-gradient(135deg,#3b2412,#0a2a1f);}
+.g4::before{background:linear-gradient(135deg,#21724f,#241409);}
+.g5::before{background:linear-gradient(135deg,#a9821e,#0f3d2e);}
+.g6::before{background:linear-gradient(135deg,#0f3d2e,#3b2412);}
+.g7::before{background:linear-gradient(135deg,#c9a227,#1a5c45);}
+@media (max-width:980px){.gallery-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:130px;}.g-item span{font-size:.86rem;}}
 
-.fade-in-up {
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.fade-in-up.visible { opacity: 1; transform: translateY(0); }
+/* ---------- reviews ---------- */
+.reviews{background:var(--white);}
+.rating-block{display:flex;align-items:center;gap:26px;justify-content:center;margin-bottom:54px;flex-wrap:wrap;}
+.rating-num{font-family:'Marcellus',serif;font-size:4rem;color:var(--green-900);line-height:1;}
+.rating-meta{display:flex;flex-direction:column;gap:6px;}
+.stars{display:flex;gap:3px;}
+.stars svg{width:18px;height:18px;color:var(--gold-500);}
+.rating-meta small{color:var(--ink-soft);font-size:.86rem;}
+.review-row{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.review-card{background:var(--cream);border-radius:var(--radius-md);padding:30px 28px;position:relative;}
+.review-card .quote-mark{font-family:'Marcellus',serif;font-size:3rem;color:var(--gold-300);line-height:1;margin-bottom:6px;display:block;}
+.review-card .stars{margin-bottom:14px;}
+.review-card p{color:var(--ink-soft);font-size:.96rem;margin-bottom:16px;}
+.review-card .who{font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;color:var(--green-700);font-weight:500;}
+.highlight-strip{margin-top:54px;text-align:center;font-family:'Marcellus',serif;font-size:1.2rem;color:var(--green-900);letter-spacing:.04em;}
+@media (max-width:900px){.review-row{grid-template-columns:1fr;}}
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-  .about-grid, .banquet-grid, .contact-grid, .location-grid { grid-template-columns: 1fr; }
-  .about-image { order: -1; }
-  .about-badge { left: 0.5rem; bottom: -1rem; }
-  .reviews-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-  .gal-item:nth-child(1) { grid-column: 1 / -1; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
-  .nav-hamburger { display: flex; }
-  .banquet-image { grid-template-columns: 1fr; }
-  .banquet-img:first-child { grid-column: auto; }
+/* ---------- contact: location + booking ---------- */
+.contact{background:var(--cream-2);}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-bottom:110px;align-items:stretch;}
+.loc-card{background:var(--white);border-radius:var(--radius-lg);padding:38px 34px;box-shadow:var(--shadow-md);display:flex;flex-direction:column;justify-content:center;}
+.loc-card .pin{display:flex;gap:14px;margin-bottom:22px;}
+.loc-card .pin svg{width:24px;height:24px;color:var(--green-700);flex-shrink:0;margin-top:2px;}
+.loc-card address{font-style:normal;color:var(--ink-soft);line-height:1.7;}
+.loc-card .phone-row{display:flex;align-items:center;gap:10px;margin-top:18px;color:var(--brown-900);font-weight:500;}
+.loc-card .phone-row svg{width:18px;height:18px;color:var(--green-700);}
+.loc-btns{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+.map-frame{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-md);border:1px solid rgba(36,20,9,.12);min-height:340px;}
+.map-frame iframe{width:100%;height:100%;min-height:340px;border:0;display:block;}
+@media (max-width:900px){.loc-grid{grid-template-columns:1fr;margin-bottom:70px;}}
+
+.booking-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:flex-start;}
+.booking-side h2{margin-bottom:18px;}
+.booking-side .perfect-item{background:var(--white);}
+.form-card{background:var(--white);border-radius:var(--radius-lg);padding:42px 38px;box-shadow:var(--shadow-lg);border-top:3px solid var(--gold-500);}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+.field{display:flex;flex-direction:column;gap:7px;}
+.field.full{grid-column:1/-1;}
+.field label{font-size:.8rem;letter-spacing:.03em;color:var(--ink-soft);font-weight:500;}
+.field input,.field select,.field textarea{
+  padding:13px 15px;border:1.3px solid rgba(36,20,9,.16);border-radius:10px;background:var(--cream);
+  color:var(--ink);transition:border-color .25s ease, box-shadow .25s ease;
 }
-@media (max-width: 600px) {
-  .section-inner { padding: 3.5rem 1.25rem; }
-  .gallery-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-  .hero-buttons { flex-direction: column; align-items: center; }
-  .menu-grid { grid-template-columns: 1fr; }
-  .about-cards { grid-template-columns: 1fr 1fr; }
-  .banquet-features { grid-template-columns: 1fr; }
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold-500);box-shadow:0 0 0 4px rgba(201,162,39,.14);outline:none;}
+.field textarea{resize:vertical;min-height:90px;}
+.form-foot{display:flex;align-items:center;gap:18px;margin-top:8px;flex-wrap:wrap;}
+.form-note{font-size:.78rem;color:var(--ink-soft);}
+.success-card{display:none;margin-top:22px;padding:18px 20px;border-radius:12px;background:#eaf4ee;border:1px solid #bfe2cc;color:var(--green-900);font-size:.92rem;}
+.success-card.show{display:block;animation:fadeUp .4s ease;}
+.success-card a{color:var(--green-900);font-weight:600;text-decoration:underline;}
+@media (max-width:980px){.booking-wrap{grid-template-columns:1fr;}}
+@media (max-width:560px){.form-row{grid-template-columns:1fr;}.form-card{padding:30px 22px;}}
+
+/* ---------- footer ---------- */
+.footer{background:linear-gradient(180deg,var(--brown-900),#1a0e05);color:rgba(251,245,232,.78);padding-top:90px;position:relative;}
+.footer-divider{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:60px;}
+.footer-divider .line{width:90px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-500));}
+.footer-divider .line.r{background:linear-gradient(90deg,var(--gold-500),transparent);}
+.footer-divider svg{width:26px;height:26px;color:var(--gold-500);}
+.footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:40px;padding-bottom:60px;border-bottom:1px solid rgba(227,200,115,.14);}
+.footer-brand .brand-text strong{color:var(--cream);font-size:1.3rem;}
+.footer-brand p{margin:16px 0 22px;font-size:.92rem;max-width:280px;color:rgba(251,245,232,.62);}
+.social-row{display:flex;gap:12px;}
+.social-row a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(227,200,115,.35);display:flex;align-items:center;justify-content:center;transition:background .3s ease;}
+.social-row a:hover{background:rgba(227,200,115,.16);}
+.social-row svg{width:16px;height:16px;color:var(--gold-300);}
+.footer h4{color:var(--gold-300);font-family:'Marcellus',serif;font-size:1.02rem;margin-bottom:20px;font-weight:400;}
+.footer ul li{margin-bottom:12px;font-size:.9rem;}
+.footer ul li a:hover{color:var(--gold-300);}
+.footer .contact-line{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;margin-bottom:14px;}
+.footer .contact-line svg{width:16px;height:16px;color:var(--gold-300);flex-shrink:0;margin-top:3px;}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 0 30px;font-size:.78rem;color:rgba(251,245,232,.5);flex-wrap:wrap;gap:10px;}
+@media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;}}
+@media (max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+
+/* ---------- whatsapp float ---------- */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:400;
+  width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,#1a5c45,#0f3d2e);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 14px 30px -8px rgba(10,42,31,.6);
 }
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+.wa-float svg{width:28px;height:28px;color:var(--cream);}
+.wa-float::before{
+  content:'';position:absolute;inset:-6px;border-radius:50%;border:2px solid rgba(26,92,69,.5);
+  animation:pulse 2.4s ease-out infinite;
 }
+@keyframes pulse{0%{transform:scale(.85);opacity:.8;}100%{transform:scale(1.35);opacity:0;}}
+@media (prefers-reduced-motion:reduce){.wa-float::before{animation:none;}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="mainNav">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">
-      <span class="name-en">Annapurna Restaurant & Banquet</span>
-      <span class="name-gu">અન્નપૂર્ણા રેસ્ટોરેન્ટ</span>
+<!-- ============ ICON SPRITE ============ -->
+<svg style="display:none" aria-hidden="true">
+<symbol id="ic-lotus" viewBox="0 0 400 400">
+  <g fill="none" stroke="currentColor" stroke-width="6">
+    <circle cx="200" cy="200" r="168" stroke-width="2.5" opacity=".5"/>
+    <g>
+      <ellipse cx="200" cy="120" rx="20" ry="62" transform="rotate(0 200 200)"/>
+      <ellipse cx="200" cy="120" rx="20" ry="62" transform="rotate(45 200 200)"/>
+      <ellipse cx="200" cy="120" rx="20" ry="62" transform="rotate(90 200 200)"/>
+      <ellipse cx="200" cy="120" rx="20" ry="62" transform="rotate(135 200 200)"/>
+      <ellipse cx="200" cy="120" rx="20" ry="62" transform="rotate(180 200 200)"/>
+      <ellipse cx="200" cy="120" rx="20" ry="62" transform="rotate(225 200 200)"/>
+      <ellipse cx="200" cy="120" rx="20" ry="62" transform="rotate(270 200 200)"/>
+      <ellipse cx="200" cy="120" rx="20" ry="62" transform="rotate(315 200 200)"/>
+    </g>
+    <circle cx="200" cy="200" r="20" stroke-width="5"/>
+  </g>
+</symbol>
+<symbol id="ic-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6.3 6.9.7-5.2 4.8 1.5 6.8L12 17.8l-6.1 3.3 1.5-6.8L2.2 9.5l6.9-.7z"/></symbol>
+<symbol id="ic-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9" r="2.6"/><path d="M15.5 14.2c2.6.2 4.5 2 4.5 4.8"/></symbol>
+<symbol id="ic-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19.5 4.5c-9 0-15 6-15 15 9 0 15-6 15-15z"/><path d="M5 19 17 7"/></symbol>
+<symbol id="ic-thali" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.2"/><circle cx="12" cy="12" r="4"/><circle cx="6.3" cy="8" r="1.3"/><circle cx="17.7" cy="8" r="1.3"/></symbol>
+<symbol id="ic-balloon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14.5c3.3 0 5.5-2.6 5.5-5.8C17.5 5.2 15 2.5 12 2.5S6.5 5.2 6.5 8.7c0 3.2 2.2 5.8 5.5 5.8Z"/><path d="M12 14.5c.7 1 .7 2-.3 2.6.9.5 1 1.5.2 2.1" /><path d="M11.6 19.2 11 21.5"/></symbol>
+<symbol id="ic-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7 19.5 6v5.6c0 5-3.4 8-7.5 9.7-4.1-1.7-7.5-4.7-7.5-9.7V6Z"/><path d="M8.7 12.2l2.3 2.3 4.3-4.7"/></symbol>
+<symbol id="ic-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.2S3.5 15.3 3.5 9.4C3.5 6.4 5.8 4.3 8.5 4.3c1.6 0 3 .8 3.5 2 .5-1.2 1.9-2 3.5-2 2.7 0 5 2.1 5 5.1 0 5.9-8.5 10.8-8.5 10.8Z"/></symbol>
+<symbol id="ic-car" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16V11l2-4.5h12L20 11v5"/><path d="M2.5 16h19"/><circle cx="7" cy="17.6" r="1.6"/><circle cx="17" cy="17.6" r="1.6"/></symbol>
+<symbol id="ic-cake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13.5h16V20H4Z"/><path d="M4 17h16"/><path d="M8 13.5v-3M16 13.5v-3M12 13.5v-3"/><path d="M12 7.2c-1 0-1-1.2 0-2.2 1 1 1 2.2 0 2.2Z"/></symbol>
+<symbol id="ic-rings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M9 9l1.6-5.5h2.8L15 9"/></symbol>
+<symbol id="ic-family" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="6.5" r="2.2"/><circle cx="16.5" cy="7" r="2.2"/><circle cx="11.7" cy="10.2" r="1.6"/><path d="M2.5 19c0-3 2-5 4.5-5s4.5 2 4.5 5"/><path d="M12.2 19c.3-2.3 1.7-3.6 3.4-3.6 2.2 0 4 2 4 4.6"/></symbol>
+<symbol id="ic-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7.5" width="18" height="11.5" rx="1.6"/><path d="M8.5 7.5V5.8a1.6 1.6 0 0 1 1.6-1.6h3.8a1.6 1.6 0 0 1 1.6 1.6V7.5"/><path d="M3 12.5h18"/></symbol>
+<symbol id="ic-confetti" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 14.5 9.5"/><circle cx="7" cy="6" r="1.1" fill="currentColor" stroke="none"/><circle cx="17.5" cy="11" r="1.1" fill="currentColor" stroke="none"/><circle cx="13" cy="5" r="1.1" fill="currentColor" stroke="none"/><circle cx="19" cy="17" r="1.1" fill="currentColor" stroke="none"/><path d="M9 3.5l1 1.6M16.5 16l1.6 1"/></symbol>
+<symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21.5S5 15 5 9.8a7 7 0 1 1 14 0c0 5.2-7 11.7-7 11.7Z"/><circle cx="12" cy="9.6" r="2.5"/></symbol>
+<symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h3.2l1.4 4.2-2 1.6a11.5 11.5 0 0 0 5.6 5.6l1.6-2L19 14.8V18a2 2 0 0 1-2 2C10.4 20 4 13.6 4 6.9 4 5.8 4.4 5 5 4Z"/></symbol>
+<symbol id="ic-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5.2" width="17" height="15.3" rx="1.8"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></symbol>
+<symbol id="ic-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16v10.2H10.4L6 19.5v-3.8H4Z"/></symbol>
+<symbol id="ic-whatsapp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19.4l1.2-3.6a8 8 0 1 1 3.3 3l-4.5.6Z"/><path d="M9.2 9.6c0 3 2.6 5.6 5.6 5.7.9 0 1-.5 1-1 0-.6-.7-1.4-1.2-1.5-.4-.1-.6.2-1 .4-.7.5-2.2-1.3-2.7-2-.2-.4.1-.5.4-1 .2-.4 0-.7-.1-1-.2-.5-.7-1.5-1.4-1.4-.5 0-.6.5-.6.8Z" fill="currentColor" stroke="none"/></symbol>
+<symbol id="ic-insta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17" cy="7" r=".9" fill="currentColor" stroke="none"/></symbol>
+<symbol id="ic-fb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 21V13h2.5l.5-3h-3V8c0-.9.3-1.5 1.7-1.5H17.5V3.8C17 3.7 15.9 3.6 14.8 3.6c-2.4 0-4 1.5-4 4.1V10H8.3v3H10.8v8Z"/></symbol>
+<symbol id="ic-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12h15M13 6l6 6-6 6"/></symbol>
+<symbol id="ic-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol>
+<symbol id="ic-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+<symbol id="ic-naan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12c0-3.5 3.2-7 8-7s8 3.5 8 7-3.6 5.5-8 5.5S4 15.5 4 12Z"/><path d="M9 9.5c.5 1 .5 2.4 0 3.5M13.5 8.8c.6 1.4.6 3.4 0 4.9M17 10c.4.8.4 1.8 0 2.6"/></symbol>
+<symbol id="ic-pot" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10.5h14l-1.4 8.2a2 2 0 0 1-2 1.6H8.4a2 2 0 0 1-2-1.6Z"/><path d="M3.5 10.5h17"/><path d="M9 10.5V8.2c0-1.7 1.3-3 3-3s3 1.3 3 3v2.3"/><path d="M9.5 5.3 11 3.5M14.5 5.3 13 3.5"/></symbol>
+<symbol id="ic-noodles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11h16l-1.6 7.3a2 2 0 0 1-2 1.5H7.6a2 2 0 0 1-2-1.5Z"/><path d="M7 11c.5-2 .2-3.6-1-5M12 11c.5-2.4.2-4.4-1.2-6.3M17 11c.5-2 .2-3.6-1-5"/></symbol>
+<symbol id="ic-drink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3.5h10l-1.3 15a2 2 0 0 1-2 1.8h-3.4a2 2 0 0 1-2-1.8Z"/><path d="M6 8.5h12"/><path d="M15.5 2 18 5.3"/></symbol>
+<symbol id="ic-chili" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5.2c2-1.6 4-2 5.3-1.1"/><path d="M8.7 6C6 8.3 4.5 12 6.3 15.8c1.6 3.3 5 4 7 2.2 2.6-2.3 2.9-7-.3-10.4-1.4-1.5-3-2.2-4.3-1.6Z"/></symbol>
+<symbol id="ic-sparkle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v5M12 16v5M3 12h5M16 12h5M6 6l3 3M18 18l-3-3M18 6l-3 3M6 18l3-3"/></symbol>
+</svg>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="siteNav">
+  <div class="container">
+    <a href="#home" class="brand">
+      <span class="brand-mark"><svg><use href="#ic-lotus"/></svg></span>
+      <span class="brand-text"><strong>Gayatri</strong><span>Restaurant &amp; Banquet</span></span>
     </a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#menu">Menu</a></li>
-      <li><a href="#banquet">Banquet</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="#contact" class="nav-cta">Book a Table</a></li>
-    </ul>
-    <button class="nav-hamburger" id="hamburgerBtn" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#special">Special Dishes</a>
+      <a href="#banquet">Banquet</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="call-pill" href="tel:+919426404429"><svg><use href="#ic-phone"/></svg>+91 94264 04429</a>
+      <a class="btn btn--outline" href="#contact">Call Now</a>
+      <a class="btn btn--gold" href="#contact">Book Table</a>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Open menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
   </div>
-</nav>
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMobile()">About</a>
-  <a href="#menu" onclick="closeMobile()">Menu</a>
-  <a href="#banquet" onclick="closeMobile()">Banquet</a>
-  <a href="#gallery" onclick="closeMobile()">Gallery</a>
-  <a href="#reviews" onclick="closeMobile()">Reviews</a>
-  <a href="#location" onclick="closeMobile()">Location</a>
-  <a href="#contact" onclick="closeMobile()">Book a Table</a>
+</header>
+
+<div class="mobile-drawer" id="mobileDrawer">
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu"><svg><use href="#ic-close"/></svg></button>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#menu">Menu</a>
+  <a href="#special">Special Dishes</a>
+  <a href="#banquet">Banquet</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#reviews">Reviews</a>
+  <a href="#contact">Contact</a>
+  <a class="btn btn--gold" href="#contact">Book Table</a>
 </div>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-pattern"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Punjabi Cuisine · Family Dining · Banquet</div>
-    <h1 class="display">Welcome to <span>Annapurna</span><br>Restaurant & Banquet</h1>
-    <p class="hero-gu gujarati">અન્નપૂર્ણા રેસ્ટોરેન્ટમાં આપનું સ્વાગત છે</p>
-    <p class="hero-sub">
-      <span>Authentic Punjabi Taste</span> &nbsp;•&nbsp;
-      <span>Premium Dining</span> &nbsp;•&nbsp;
-      <span>Memorable Celebrations</span>
-    </p>
-    <div class="hero-rating">
-      <span class="stars">★★★★☆</span>
-      <strong>4.2 / 5</strong>
-      <span style="color:rgba(255,255,255,0.6)">· 5,298+ Reviews</span>
-    </div>
-    <div class="hero-buttons">
-      <a href="#menu" class="btn btn-primary">🍽 View Menu</a>
-      <a href="#contact" class="btn btn-outline">📅 Book a Table</a>
-      <a href="https://maps.google.com/?q=Devdarshan+Complex+Vatva+Ahmedabad" target="_blank" class="btn btn-green">📍 Get Directions</a>
+<main>
+<!-- ============ HERO ============ -->
+<section id="home" class="hero">
+  <span class="hero-frame tl"></span>
+  <span class="hero-frame br"></span>
+  <svg class="hero-lotus-big" viewBox="0 0 400 400" aria-hidden="true"><use href="#ic-lotus"/></svg>
+  <div class="container">
+    <div class="hero-inner">
+      <div class="eyebrow eyebrow--on-dark">Pure Vegetarian &middot; Est. in Vatva, Ahmedabad</div>
+      <h1>Welcome to <em>Gayatri</em> Restaurant &amp; Banquet</h1>
+      <p class="gu-line gu">ગાયત્રી રેસ્ટોરન્ટ એન્ડ બેંકવેટ્સમાં આપનું સ્વાગત છે</p>
+      <p class="sub">Authentic Taste &middot; Pure Vegetarian Food &middot; Memorable Celebrations</p>
+
+      <div class="hero-stat-row">
+        <span class="stat-pill"><svg><use href="#ic-star"/></svg><strong>4.2</strong>&nbsp;Rating</span>
+        <span class="stat-pill"><svg><use href="#ic-users"/></svg>Trusted by <strong>2,180+</strong> Guests</span>
+        <span class="stat-pill"><svg><use href="#ic-leaf"/></svg>100% Vegetarian</span>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#menu" class="btn btn--gold">Explore Menu <svg><use href="#ic-arrow"/></svg></a>
+        <a href="#contact" class="btn btn--outline">Book Your Table</a>
+        <a href="#banquet" class="btn btn--outline">Plan Your Event</a>
+      </div>
     </div>
   </div>
-  <div class="hero-scroll" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
-    SCROLL
-  </div>
+  <div class="scroll-cue"><span>Scroll</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4v16M6 14l6 6 6-6"/></svg></div>
 </section>
 
-<!-- ABOUT -->
-<section class="about" id="about">
-  <div class="mandala-bg"></div>
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="about-text fade-in-up">
-        <div class="section-label">Our Story</div>
-        <h2 class="section-title">Serving Happiness<br><em>With Authentic Taste</em></h2>
-        <p>Annapurna Restaurant & Banquet is one of Ahmedabad's most loved family restaurants, offering a rich spread of delicious Punjabi cuisine, comfortable dining spaces, and elegant banquet facilities for every occasion.</p>
-        <p>With thousands of happy customers and a glowing 4.2-star rating, Annapurna is the perfect destination for family dinners, festive celebrations, corporate gatherings, and milestone events.</p>
-        <div class="about-cards">
-          <div class="about-card">
-            <div class="icon">⭐</div>
-            <div class="stat">4.2 / 5</div>
-            <div class="label">Customer Rating</div>
-          </div>
-          <div class="about-card">
-            <div class="icon">👥</div>
-            <div class="stat">5,298+</div>
-            <div class="label">Happy Reviews</div>
-          </div>
-          <div class="about-card">
-            <div class="icon">🍛</div>
-            <div class="stat">100%</div>
-            <div class="label">Authentic Punjabi</div>
-          </div>
-          <div class="about-card">
-            <div class="icon">🎉</div>
-            <div class="stat">Premium</div>
-            <div class="label">Banquet Facility</div>
-          </div>
-        </div>
-      </div>
-      <div class="about-image fade-in-up">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80" alt="Annapurna Restaurant interior" loading="lazy">
-        <div class="about-badge">
-          <span class="big">₹200</span>
-          <span class="small">per person onwards</span>
-        </div>
+<!-- ============ ABOUT ============ -->
+<section id="about" class="about section-pad">
+  <div class="container about-grid">
+    <div class="about-visual reveal">
+      <svg viewBox="0 0 400 400"><use href="#ic-lotus"/></svg>
+      <div class="tag"><strong>Since the heart of Vatva</strong> &mdash; serving Ahmedabad's families pure vegetarian comfort &amp; celebration for years.</div>
+    </div>
+    <div class="about-text reveal">
+      <div class="eyebrow">About Us</div>
+      <h2 class="h2">Where Taste Meets <em>Tradition</em></h2>
+      <p>Gayatri Restaurant and Banquet is a premium vegetarian dining destination in Ahmedabad serving delicious Indian, Punjabi, Gujarati and Chinese cuisine.</p>
+      <p>With spacious interiors, quality service and comfortable dining, Gayatri is the perfect place for family dinners, celebrations and special occasions.</p>
+      <div class="feature-chip-row">
+        <div class="feature-chip"><svg><use href="#ic-leaf"/></svg>Pure Vegetarian Food</div>
+        <div class="feature-chip"><svg><use href="#ic-star"/></svg>2,000+ Happy Reviews</div>
+        <div class="feature-chip"><svg><use href="#ic-balloon"/></svg>Spacious Banquet Facility</div>
+        <div class="feature-chip"><svg><use href="#ic-family"/></svg>Perfect Family Restaurant</div>
+        <div class="feature-chip wide"><svg><use href="#ic-car"/></svg>Easy, Hassle-free Parking</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MENU -->
-<section class="menu-section" id="menu">
-  <div class="section-inner">
-    <div style="text-align:center" class="fade-in-up">
-      <div class="section-label">Crafted With Love</div>
-      <h2 class="section-title">Our Signature <em>Menu</em></h2>
-      <div class="gold-divider"></div>
+<!-- ============ MENU ============ -->
+<section id="menu" class="menu-sec section-pad">
+  <div class="container">
+    <div class="head-row head-row--center reveal">
+      <div class="eyebrow eyebrow--center">Our Menu</div>
+      <h2 class="h2">A Feast Across <em>Cuisines</em></h2>
+      <p class="lede">From Gujarati comfort thalis to Punjabi classics, sizzling Chinese plates and tandoori favourites &mdash; every dish is made fresh, in-house, the pure vegetarian way.</p>
     </div>
-    <div class="menu-tabs fade-in-up">
-      <button class="tab-btn active" data-cat="all">All</button>
-      <button class="tab-btn" data-cat="punjabi">Punjabi Specials</button>
-      <button class="tab-btn" data-cat="breads">Indian Breads</button>
-      <button class="tab-btn" data-cat="rice">Rice & Biryani</button>
-      <button class="tab-btn" data-cat="starters">Starters</button>
-      <button class="tab-btn" data-cat="drinks">Drinks</button>
+
+    <div class="tab-row reveal" id="tabRow">
+      <button class="tab-btn active" data-tab="guj">Gujarati Special</button>
+      <button class="tab-btn" data-tab="pun">Punjabi Special</button>
+      <button class="tab-btn" data-tab="rice">Rice &amp; Biryani</button>
+      <button class="tab-btn" data-tab="chi">Chinese</button>
+      <button class="tab-btn" data-tab="bread">Indian Bread</button>
+      <button class="tab-btn" data-tab="bev">Beverages</button>
     </div>
-    <div class="menu-grid" id="menuGrid">
-      <!-- Punjabi Specials -->
-      <div class="menu-card visible" data-cat="punjabi">
-        <div class="menu-card-body">
-          <div class="dish-name">Paneer Butter Masala</div>
-          <div class="dish-desc">Soft paneer cubes in a rich, creamy tomato-cashew gravy, finished with aromatic spices.</div>
-          <div class="dish-footer"><span class="price">₹220</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="punjabi">
-        <div class="menu-card-body">
-          <div class="dish-name">Paneer Tikka Masala</div>
-          <div class="dish-desc">Tandoor-grilled paneer tossed in a bold, spiced tikka masala sauce.</div>
-          <div class="dish-footer"><span class="price">₹240</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="punjabi">
-        <div class="menu-card-body">
-          <div class="dish-name">Kaju Curry</div>
-          <div class="dish-desc">Whole cashews simmered in a luxurious saffron-tinged creamy gravy.</div>
-          <div class="dish-footer"><span class="price">₹260</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="punjabi">
-        <div class="menu-card-body">
-          <div class="dish-name">Veg Handi</div>
-          <div class="dish-desc">A village-style mixed vegetable preparation slow-cooked in a clay handi.</div>
-          <div class="dish-footer"><span class="price">₹200</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="punjabi">
-        <div class="menu-card-body">
-          <div class="dish-name">Cheese Butter Masala</div>
-          <div class="dish-desc">A rich, indulgent twist on the classic — paneer replaced with soft cottage cheese cubes.</div>
-          <div class="dish-footer"><span class="price">₹250</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="punjabi">
-        <div class="menu-card-body">
-          <div class="dish-name">Dal Fry</div>
-          <div class="dish-desc">Yellow lentils tempered with cumin, garlic, and Punjabi spices in desi ghee.</div>
-          <div class="dish-footer"><span class="price">₹160</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="punjabi">
-        <div class="menu-card-body">
-          <div class="dish-name">Dal Tadka</div>
-          <div class="dish-desc">Creamy arhar dal with a smoky ghee tadka of dried chillies and whole spices.</div>
-          <div class="dish-footer"><span class="price">₹170</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <!-- Breads -->
-      <div class="menu-card visible" data-cat="breads">
-        <div class="menu-card-body">
-          <div class="dish-name">Butter Naan</div>
-          <div class="dish-desc">Soft leavened flatbread baked in tandoor, generously finished with fresh butter.</div>
-          <div class="dish-footer"><span class="price">₹55</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="breads">
-        <div class="menu-card-body">
-          <div class="dish-name">Garlic Naan</div>
-          <div class="dish-desc">Tandoor-baked naan infused with minced garlic and coriander butter.</div>
-          <div class="dish-footer"><span class="price">₹65</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="breads">
-        <div class="menu-card-body">
-          <div class="dish-name">Tandoori Roti</div>
-          <div class="dish-desc">Whole wheat roti cooked directly on tandoor, light and wholesome.</div>
-          <div class="dish-footer"><span class="price">₹40</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="breads">
-        <div class="menu-card-body">
-          <div class="dish-name">Paratha</div>
-          <div class="dish-desc">Layered wheat flatbread, pan-fried in butter. Available plain or stuffed.</div>
-          <div class="dish-footer"><span class="price">₹70</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <!-- Rice -->
-      <div class="menu-card visible" data-cat="rice">
-        <div class="menu-card-body">
-          <div class="dish-name">Veg Biryani</div>
-          <div class="dish-desc">Fragrant basmati rice layered with spiced vegetables and caramelised onions.</div>
-          <div class="dish-footer"><span class="price">₹200</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="rice">
-        <div class="menu-card-body">
-          <div class="dish-name">Jeera Rice</div>
-          <div class="dish-desc">Basmati rice tempered with whole cumin seeds in ghee — simple and aromatic.</div>
-          <div class="dish-footer"><span class="price">₹130</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="rice">
-        <div class="menu-card-body">
-          <div class="dish-name">Veg Pulav</div>
-          <div class="dish-desc">Light one-pot rice with seasonal vegetables and whole spices.</div>
-          <div class="dish-footer"><span class="price">₹160</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <!-- Starters -->
-      <div class="menu-card visible" data-cat="starters">
-        <div class="menu-card-body">
-          <div class="dish-name">Paneer Tikka</div>
-          <div class="dish-desc">Marinated cottage cheese cubes grilled in tandoor with capsicum and onion.</div>
-          <div class="dish-footer"><span class="price">₹220</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="starters">
-        <div class="menu-card-body">
-          <div class="dish-name">Veg Manchurian</div>
-          <div class="dish-desc">Crispy mixed vegetable balls tossed in a tangy Indo-Chinese manchurian sauce.</div>
-          <div class="dish-footer"><span class="price">₹180</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="starters">
-        <div class="menu-card-body">
-          <div class="dish-name">Crispy Veg</div>
-          <div class="dish-desc">Mixed vegetables in a light seasoned batter, deep-fried to a perfect golden crunch.</div>
-          <div class="dish-footer"><span class="price">₹160</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <!-- Drinks -->
-      <div class="menu-card visible" data-cat="drinks">
-        <div class="menu-card-body">
-          <div class="dish-name">Fresh Lime Soda</div>
-          <div class="dish-desc">Hand-squeezed lime with chilled sparkling water. Sweet, salty, or masala.</div>
-          <div class="dish-footer"><span class="price">₹60</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="drinks">
-        <div class="menu-card-body">
-          <div class="dish-name">Lassi</div>
-          <div class="dish-desc">Thick, chilled churned yogurt — sweet mango, plain, or rose flavour.</div>
-          <div class="dish-footer"><span class="price">₹90</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
-      <div class="menu-card visible" data-cat="drinks">
-        <div class="menu-card-body">
-          <div class="dish-name">Cold Drinks</div>
-          <div class="dish-desc">Chilled assorted beverages. Pepsi, 7Up, Sprite, and Mirinda available.</div>
-          <div class="dish-footer"><span class="price">₹50</span><span class="veg-badge"></span></div>
-        </div>
-      </div>
+
+    <div class="menu-panel active" data-panel="guj">
+      <div class="dish-card"><div class="dish-media"><span class="badge">Signature</span><svg><use href="#ic-thali"/></svg></div><div class="dish-body"><h4>Gujarati Thali</h4><p>An unlimited spread of seasonal sabzis, dal, kadhi, rotli, rice &amp; sweets &mdash; home-style and wholesome.</p></div></div>
     </div>
-    <div class="menu-cta fade-in-up">
-      <a href="#contact" class="btn btn-primary" style="font-size:1rem;padding:0.9rem 2.5rem">📋 View Full Menu — Book a Table</a>
+    <div class="menu-panel" data-panel="pun">
+      <div class="dish-card"><div class="dish-media"><span class="badge">Signature</span><svg><use href="#ic-thali"/></svg></div><div class="dish-body"><h4>Punjabi Thali</h4><p>A royal combination of rich curries, dal makhani, paneer, naan and dessert.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-pot"/></svg></div><div class="dish-body"><h4>Paneer Tikka Masala</h4><p>Char-grilled paneer simmered in a smoky tomato-onion gravy.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-pot"/></svg></div><div class="dish-body"><h4>Kadhai Paneer Masala</h4><p>Paneer and peppers tossed in a bold kadhai-spice masala.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><span class="badge">Bestseller</span><svg><use href="#ic-pot"/></svg></div><div class="dish-body"><h4>Paneer Angaari</h4><p>Smoky, fiery paneer curry finished with a live-coal infusion.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-pot"/></svg></div><div class="dish-body"><h4>Veg Handi</h4><p>Mixed vegetables slow-cooked in a traditional clay-pot gravy.</p></div></div>
+    </div>
+    <div class="menu-panel" data-panel="rice">
+      <div class="dish-card"><div class="dish-media"><span class="badge">Bestseller</span><svg><use href="#ic-pot"/></svg></div><div class="dish-body"><h4>Dum Biryani</h4><p>Layered basmati rice slow-cooked with vegetables &amp; whole spices.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-pot"/></svg></div><div class="dish-body"><h4>SP Dum Handi Biryani</h4><p>Our chef's special handi biryani, sealed and slow-dum cooked.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-pot"/></svg></div><div class="dish-body"><h4>Matka Biryani</h4><p>Earthen-pot biryani infused with smoky, fragrant dum aroma.</p></div></div>
+    </div>
+    <div class="menu-panel" data-panel="chi">
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-chili"/></svg></div><div class="dish-body"><h4>Chinese Sizzler</h4><p>A sizzling plate of vegetables, noodles &amp; sauces served tableside.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><span class="badge">Bestseller</span><svg><use href="#ic-noodles"/></svg></div><div class="dish-body"><h4>Veg Manchurian</h4><p>Crisp vegetable balls tossed in a tangy Indo-Chinese sauce.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-drink"/></svg></div><div class="dish-body"><h4>Hot and Sour Soup</h4><p>A warming, peppery soup with crisp vegetables.</p></div></div>
+    </div>
+    <div class="menu-panel" data-panel="bread">
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-naan"/></svg></div><div class="dish-body"><h4>Cheese Chilly Naan</h4><p>Soft tandoor-baked naan stuffed with cheese &amp; green chilli.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-naan"/></svg></div><div class="dish-body"><h4>Butter Naan</h4><p>Classic tandoori naan finished with a brush of butter.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-naan"/></svg></div><div class="dish-body"><h4>Tandoori Roti</h4><p>Whole-wheat roti baked fresh in the tandoor.</p></div></div>
+    </div>
+    <div class="menu-panel" data-panel="bev">
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-drink"/></svg></div><div class="dish-body"><h4>Butter Milk</h4><p>Chilled, spiced chaas &mdash; the perfect palate refresher.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-drink"/></svg></div><div class="dish-body"><h4>Cold Coffee</h4><p>Rich, frothy and served icy cold.</p></div></div>
+      <div class="dish-card"><div class="dish-media"><svg><use href="#ic-drink"/></svg></div><div class="dish-body"><h4>Soft Drinks</h4><p>A selection of chilled soft beverages.</p></div></div>
+    </div>
+
+    <div class="menu-cta reveal">
+      <button class="btn btn--outline-dark" id="openMenuModal">View Complete Menu <svg><use href="#ic-arrow"/></svg></button>
     </div>
   </div>
 </section>
 
-<!-- BANQUET -->
-<section class="banquet" id="banquet">
-  <div class="mandala-bg"></div>
-  <div class="section-inner">
-    <div class="banquet-grid">
-      <div class="fade-in-up">
-        <div class="section-label">Celebrations & Events</div>
-        <h2 class="section-title">Celebrate Your<br><em>Special Moments</em><br>With Us</h2>
-        <div class="banquet-text">
-          <p>Make your celebrations truly memorable with Annapurna Banquet. Whether it is a birthday, engagement, family function, corporate meet, or a private gathering — our elegant venue and attentive team deliver a flawless experience every time.</p>
-          <div class="banquet-features">
-            <div class="banquet-feat"><span class="fi">✨</span> Elegant Decoration</div>
-            <div class="banquet-feat"><span class="fi">🎤</span> Full Event Setup</div>
-            <div class="banquet-feat"><span class="fi">🍽</span> Catering Service</div>
-            <div class="banquet-feat"><span class="fi">👨‍👩‍👧</span> Family Functions</div>
-            <div class="banquet-feat"><span class="fi">📸</span> Photo-Ready Spaces</div>
-            <div class="banquet-feat"><span class="fi">🎂</span> Birthday Parties</div>
-          </div>
-          <a href="#contact" class="btn btn-primary" style="font-size:1rem;padding:0.9rem 2.2rem">🎉 Book Banquet Now</a>
-        </div>
+<!-- ============ SPECIAL / WHY CHOOSE US ============ -->
+<section id="special" class="why section-pad">
+  <div class="container">
+    <div class="head-row head-row--center reveal">
+      <div class="eyebrow eyebrow--center">Special Dishes &amp; Service</div>
+      <h2 class="h2">Why Choose Us?</h2>
+      <p class="lede">Every detail, from the table linen to the last bite, is built around one idea: affordable luxury, done properly.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card"><svg><use href="#ic-thali"/></svg><h3>Spacious White Table Dining</h3><p>Generous seating designed for comfortable family meals and celebrations.</p></div>
+      <div class="why-card"><svg><use href="#ic-shield"/></svg><h3>Hygienic Restaurant</h3><p>Spotless kitchens and dining areas maintained to the highest standard.</p></div>
+      <div class="why-card"><svg><use href="#ic-heart"/></svg><h3>Friendly Staff</h3><p>Warm, attentive service rooted in genuine Indian hospitality.</p></div>
+      <div class="why-card"><svg><use href="#ic-leaf"/></svg><h3>Fresh Ingredients</h3><p>Sourced daily and prepared fresh for every single order.</p></div>
+      <div class="why-card"><svg><use href="#ic-sparkle"/></svg><h3>Affordable Luxury Dining</h3><p>Premium experience at honest, family-friendly prices.</p></div>
+      <div class="why-card"><svg><use href="#ic-star"/></svg><h3>Premium Food Quality</h3><p>Consistent taste and quality across every cuisine we serve.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BANQUET ============ -->
+<section id="banquet" class="banquet section-pad">
+  <div class="container banquet-grid">
+    <div class="reveal">
+      <div class="eyebrow eyebrow--on-dark">Banquet &amp; Celebrations</div>
+      <h2 class="h2">Celebrate Your Precious Moments With <em>Gayatri</em></h2>
+      <p class="lede">Make every celebration special with our spacious banquet facility, delicious catering and professional service.</p>
+      <div class="perfect-grid">
+        <div class="perfect-item"><svg><use href="#ic-cake"/></svg>Birthday Parties</div>
+        <div class="perfect-item"><svg><use href="#ic-rings"/></svg>Engagement Events</div>
+        <div class="perfect-item"><svg><use href="#ic-family"/></svg>Family Functions</div>
+        <div class="perfect-item"><svg><use href="#ic-briefcase"/></svg>Corporate Meetings</div>
+        <div class="perfect-item" style="grid-column:1/-1"><svg><use href="#ic-confetti"/></svg>Special Celebrations</div>
       </div>
-      <div class="banquet-image fade-in-up">
-        <div class="banquet-img">
-          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=900&q=80" alt="Banquet hall" loading="lazy">
-        </div>
-        <div class="banquet-img">
-          <img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?w=500&q=80" alt="Celebration event" loading="lazy">
-        </div>
-        <div class="banquet-img">
-          <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=500&q=80" alt="Family gathering" loading="lazy">
-        </div>
+    </div>
+    <div class="reveal">
+      <div class="banquet-card">
+        <h3>Banquet Features</h3>
+        <ul class="feature-list">
+          <li><svg><use href="#ic-star"/></svg>Premium Seating</li>
+          <li><svg><use href="#ic-sparkle"/></svg>Beautiful Decoration</li>
+          <li><svg><use href="#ic-thali"/></svg>Custom Food Menu</li>
+          <li><svg><use href="#ic-heart"/></svg>Professional Service</li>
+          <li><svg><use href="#ic-leaf"/></svg>Spacious Event Area</li>
+        </ul>
+        <a href="#contact" class="btn btn--gold" style="margin-top:26px;">Book Banquet <svg><use href="#ic-arrow"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery-section" id="gallery">
-  <div class="section-inner">
-    <div style="text-align:center" class="fade-in-up">
-      <div class="section-label">Food & Ambience</div>
-      <h2 class="section-title">A Feast for the <em>Eyes</em></h2>
-      <div class="gold-divider"></div>
+<!-- ============ GALLERY ============ -->
+<section id="gallery" class="gallery section-pad">
+  <div class="container">
+    <div class="head-row head-row--center reveal">
+      <div class="eyebrow eyebrow--center">Gallery</div>
+      <h2 class="h2">A Glimpse Inside <em>Gayatri</em></h2>
     </div>
-    <div class="gallery-grid fade-in-up">
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=600&q=80" alt="Punjabi thali">
-        <div class="gal-overlay"><span>Punjabi Thali</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80" alt="Paneer dish">
-        <div class="gal-overlay"><span>Paneer Tikka</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1574653853027-5382a3d23a15?w=600&q=80" alt="Indian biryani">
-        <div class="gal-overlay"><span>Veg Biryani</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80" alt="Restaurant interior">
-        <div class="gal-overlay"><span>Dining Area</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Restaurant ambience">
-        <div class="gal-overlay"><span>Our Ambience</span></div>
-      </div>
-      <div class="gal-item">
-        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Fine dining">
-        <div class="gal-overlay"><span>Family Dining</span></div>
-      </div>
+    <div class="gallery-grid reveal">
+      <div class="g-item g1 tall"><span><svg><use href="#ic-thali"/></svg>Food &amp; Drinks</span></div>
+      <div class="g-item g2"><span><svg><use href="#ic-leaf"/></svg>Restaurant Interior</span></div>
+      <div class="g-item g3"><span><svg><use href="#ic-family"/></svg>Dining Area</span></div>
+      <div class="g-item g4 tall"><span><svg><use href="#ic-balloon"/></svg>Banquet Hall</span></div>
+      <div class="g-item g5"><span><svg><use href="#ic-thali"/></svg>Gujarati Thali</span></div>
+      <div class="g-item g6"><span><svg><use href="#ic-chili"/></svg>Punjabi Food</span></div>
+      <div class="g-item g7"><span><svg><use href="#ic-confetti"/></svg>Events</span></div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section class="reviews-section" id="reviews">
-  <div class="section-inner">
-    <div style="text-align:center" class="fade-in-up">
-      <div class="section-label">Customer Love</div>
-      <h2 class="section-title">What Our Customers <em>Say</em></h2>
-      <div class="rating-hero">
-        <div class="rating-big">4.2</div>
-        <div class="rating-stars">★★★★☆</div>
-        <div class="rating-count">Based on 5,298+ verified reviews</div>
+<!-- ============ REVIEWS ============ -->
+<section id="reviews" class="reviews section-pad">
+  <div class="container">
+    <div class="head-row head-row--center reveal">
+      <div class="eyebrow eyebrow--center">Testimonials</div>
+      <h2 class="h2">Customers Love <em>Gayatri</em></h2>
+    </div>
+    <div class="rating-block reveal">
+      <div class="rating-num">4.2</div>
+      <div class="rating-meta">
+        <div class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></div>
+        <small>Based on 2,180+ Google Reviews</small>
       </div>
     </div>
-    <div class="reviews-grid fade-in-up">
+    <div class="review-row reveal">
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Very nice atmosphere. I love this amazing place. The paneer butter masala was simply outstanding — best I've had in Ahmedabad!</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">RK</div>
-          <div>
-            <div class="reviewer-name">Rahul Kapoor</div>
-            <div class="reviewer-date">Google Review · 2 weeks ago</div>
-          </div>
-        </div>
+        <span class="quote-mark">&ldquo;</span>
+        <div class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></div>
+        <p>Good food quality, excellent service, nice location and parking area.</p>
+        <div class="who">Google Review</div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-text">Perfect family restaurant with delicious Punjabi food. We celebrated our anniversary here and the staff made it truly special. Will definitely return!</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">PS</div>
-          <div>
-            <div class="reviewer-name">Priya Shah</div>
-            <div class="reviewer-date">Google Review · 1 month ago</div>
-          </div>
-        </div>
+        <span class="quote-mark">&ldquo;</span>
+        <div class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></div>
+        <p>Best place to eat. Staff is friendly and hygiene is maintained perfectly.</p>
+        <div class="who">Google Review</div>
       </div>
       <div class="review-card">
-        <div class="review-stars">★★★★☆</div>
-        <p class="review-text">Good ambience, tasty food and a comfortable dining experience. The banquet hall is well-maintained and the catering for our event was excellent.</p>
-        <div class="reviewer">
-          <div class="reviewer-avatar">AM</div>
-          <div>
-            <div class="reviewer-name">Amit Mehta</div>
-            <div class="reviewer-date">Google Review · 3 weeks ago</div>
-          </div>
+        <span class="quote-mark">&ldquo;</span>
+        <div class="stars"><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg><svg><use href="#ic-star"/></svg></div>
+        <p>Great variety of dishes, each cooked perfectly with amazing taste.</p>
+        <div class="who">Google Review</div>
+      </div>
+    </div>
+    <div class="highlight-strip reveal">Taste &middot; Service &middot; Quality</div>
+  </div>
+</section>
+
+<!-- ============ CONTACT: LOCATION + BOOKING ============ -->
+<section id="contact" class="contact section-pad">
+  <div class="container">
+    <div class="head-row head-row--center reveal">
+      <div class="eyebrow eyebrow--center">Visit Us</div>
+      <h2 class="h2">Find Us in <em>Vatva GIDC</em></h2>
+    </div>
+    <div class="loc-grid reveal">
+      <div class="loc-card">
+        <div class="pin"><svg><use href="#ic-pin"/></svg>
+          <address>
+            Rudraksh Complex,<br>
+            ll Mehmdabad Road,<br>
+            Opposite Gopal Petrol Pump,<br>
+            Trikampura, Vatva GIDC,<br>
+            Ahmedabad, Gujarat &ndash; 382445
+          </address>
         </div>
+        <div class="phone-row"><svg><use href="#ic-phone"/></svg>+91 94264 04429</div>
+        <div class="loc-btns">
+          <a class="btn btn--gold btn--sm" href="https://www.google.com/maps/dir/?api=1&destination=Rudraksh+Complex+Mehmdabad+Road+Trikampura+Vatva+GIDC+Ahmedabad+Gujarat+382445" target="_blank" rel="noopener">Get Directions</a>
+          <a class="btn btn--outline-dark btn--sm" href="tel:+919426404429">Call Restaurant</a>
+        </div>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://maps.google.com/maps?q=Rudraksh%20Complex%20Mehmdabad%20Road%20Trikampura%20Vatva%20GIDC%20Ahmedabad%20Gujarat%20382445&t=&z=15&ie=UTF8&iwloc=&output=embed" title="Gayatri Restaurant &amp; Banquet map location" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="booking-wrap reveal">
+      <div class="booking-side">
+        <div class="eyebrow">Reserve</div>
+        <h2 class="h2">Reserve Your <em>Experience</em></h2>
+        <p class="lede">Tell us a little about your visit and we'll get back to confirm &mdash; or message us directly on WhatsApp for an instant response.</p>
+        <div class="perfect-item" style="margin-top:26px;"><svg><use href="#ic-calendar"/></svg>Same-day table booking, subject to availability</div>
+        <div class="perfect-item" style="margin-top:14px;"><svg><use href="#ic-balloon"/></svg>Banquet bookings recommended 1&ndash;2 weeks ahead</div>
+      </div>
+
+      <div class="form-card">
+        <form id="bookingForm">
+          <div class="form-row">
+            <div class="field full"><label for="fname">Full Name</label><input id="fname" name="fname" type="text" required placeholder="Your name"></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="fmobile">Mobile Number</label><input id="fmobile" name="fmobile" type="tel" required placeholder="+91 00000 00000" pattern="[0-9+ ]{8,15}"></div>
+            <div class="field"><label for="ftype">Booking Type</label>
+              <select id="ftype" name="ftype">
+                <option value="Restaurant Table">Restaurant Table</option>
+                <option value="Banquet Booking">Banquet Booking</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="fguests">Number of Guests</label><input id="fguests" name="fguests" type="number" min="1" required placeholder="e.g. 4"></div>
+            <div class="field"><label for="fdate">Date</label><input id="fdate" name="fdate" type="date" required></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="ftime">Time</label><input id="ftime" name="ftime" type="time" required></div>
+            <div class="field"><label for="fmsg2">&nbsp;</label><div style="font-size:.78rem;color:var(--ink-soft);padding-top:10px;">We'll confirm availability by phone or WhatsApp.</div></div>
+          </div>
+          <div class="form-row">
+            <div class="field full"><label for="fmsg">Message (optional)</label><textarea id="fmsg" name="fmsg" placeholder="Any special requests, occasion, or decoration needs..."></textarea></div>
+          </div>
+          <div class="form-foot">
+            <button type="submit" class="btn btn--gold">Reserve Now <svg><use href="#ic-arrow"/></svg></button>
+            <span class="form-note">No payment required to reserve.</span>
+          </div>
+          <div class="success-card" id="successCard">
+            Thank you! Your request has been noted. To confirm instantly, <a id="waConfirmLink" href="#" target="_blank" rel="noopener">tap here to send it to us on WhatsApp</a>, or call <a href="tel:+919426404429">+91 94264 04429</a>.
+          </div>
+        </form>
       </div>
     </div>
   </div>
 </section>
+</main>
 
-<!-- LOCATION -->
-<section class="location-section" id="location">
-  <div class="section-inner">
-    <div style="text-align:center;margin-bottom:3rem" class="fade-in-up">
-      <div class="section-label">Find Us</div>
-      <h2 class="section-title">We're Right <em>Here</em> For You</h2>
-      <div class="gold-divider"></div>
-    </div>
-    <div class="location-grid">
-      <div class="fade-in-up">
-        <div class="address-block">
-          <h3 class="display">Visit Annapurna</h3>
-          <div class="addr-line"><span class="icon">📍</span><span>Devdarshan Complex, Near Jashodanagar,<br>Vatva GIDC Road, Vatva,<br>Ahmedabad, Gujarat – 382445</span></div>
-        </div>
-        <div class="info-row">
-          <span class="icon">📞</span>
-          <div><div class="val">+91 94278 05350</div><div class="detail">Call to reserve or enquire</div></div>
-        </div>
-        <div class="info-row">
-          <span class="icon">🕐</span>
-          <div><div class="val">Open Daily · Till 11:00 PM</div><div class="detail">Lunch & Dinner — all days</div></div>
-        </div>
-        <div class="info-row">
-          <span class="icon">💰</span>
-          <div><div class="val">₹200 – ₹400 per person</div><div class="detail">Affordable premium dining</div></div>
-        </div>
-        <div class="info-row">
-          <span class="icon">🚗</span>
-          <div><div class="val">Dine-in · Drive-through · Delivery</div><div class="detail">Multiple service options</div></div>
-        </div>
-        <div class="map-btns">
-          <a href="https://maps.google.com/?q=Annapurna+Restaurant+Banquet+Vatva+Ahmedabad" target="_blank" class="btn btn-saffron">📍 Open Google Maps</a>
-          <a href="tel:+919427805350" class="btn btn-dark">📞 Call Restaurant</a>
-        </div>
-      </div>
-      <div class="map-embed fade-in-up">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.9!2d72.63!3d22.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDU4JzEyLjAiTiA3MsKwMzcnNDguMCJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          title="Annapurna Restaurant location map">
-        </iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT/BOOKING -->
-<section class="contact-section" id="contact">
-  <div class="mandala-bg"></div>
-  <div class="section-inner">
-    <div style="text-align:center;margin-bottom:3rem" class="fade-in-up">
-      <div class="section-label">Reservations</div>
-      <h2 class="section-title">Reserve Your <em>Table</em></h2>
-      <div class="gold-divider"></div>
-    </div>
-    <div class="contact-grid">
-      <div class="contact-info fade-in-up">
-        <p>Whether it's a quiet family dinner or a grand banquet celebration, we're ready to make your experience exceptional. Reach out and we'll handle everything.</p>
-        <div class="contact-detail">
-          <span class="icon">📞</span>
-          <div><div class="cd-val">+91 94278 05350</div><div class="cd-label">Call us anytime</div></div>
-        </div>
-        <div class="contact-detail">
-          <span class="icon">🕐</span>
-          <div><div class="cd-val">Open Daily · Closes at 11 PM</div><div class="cd-label">Restaurant timings</div></div>
-        </div>
-        <div class="contact-detail">
-          <span class="icon">🌐</span>
-          <div><div class="cd-val">annapurnarestaurantbanquet.com</div><div class="cd-label">Official website</div></div>
-        </div>
-        <div class="contact-detail">
-          <span class="icon">📍</span>
-          <div><div class="cd-val">Vatva GIDC Road, Ahmedabad</div><div class="cd-label">Gujarat – 382445</div></div>
-        </div>
-        <a href="https://wa.me/919427805350?text=Hello!%20I%20would%20like%20to%20book%20a%20table%20at%20Annapurna%20Restaurant." target="_blank" class="btn btn-primary" style="margin-top:1.5rem;font-size:0.95rem">
-          💬 WhatsApp Us Now
-        </a>
-      </div>
-      <div class="booking-form fade-in-up">
-        <h3>Make a Reservation</h3>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Your Name</label>
-            <input type="text" placeholder="Rahul Sharma">
-          </div>
-          <div class="form-group">
-            <label>Phone Number</label>
-            <input type="tel" placeholder="+91 98765 43210">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Number of Guests</label>
-            <input type="number" placeholder="4" min="1">
-          </div>
-          <div class="form-group">
-            <label>Booking Type</label>
-            <select>
-              <option>Dining</option>
-              <option>Banquet — Birthday Party</option>
-              <option>Banquet — Engagement</option>
-              <option>Banquet — Family Function</option>
-              <option>Banquet — Corporate Event</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Preferred Date</label>
-          <input type="date">
-        </div>
-        <div class="form-group">
-          <label>Message / Special Request</label>
-          <textarea placeholder="Any dietary preferences, seating requests, or special occasion details..."></textarea>
-        </div>
-        <button class="btn btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:1rem" onclick="handleSubmit()">
-          🍽 Reserve Now
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-top">
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-divider"><span class="line"></span><svg><use href="#ic-lotus"/></svg><span class="line r"></span></div>
+    <div class="footer-grid">
       <div class="footer-brand">
-        <div class="name">Annapurna Restaurant & Banquet</div>
-        <div class="gu gujarati">અન્નપૂર્ણા રેસ્ટોરેન્ટ</div>
-        <p>Serving authentic Punjabi cuisine and hosting memorable celebrations in Ahmedabad since our founding. Come dine with us — every meal is a celebration.</p>
-        <div class="footer-social">
-          <a href="#" class="soc-btn" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="#" class="soc-btn" aria-label="Facebook">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-          </a>
-          <a href="https://wa.me/919427805350" class="soc-btn" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
+        <div class="brand">
+          <span class="brand-mark"><svg><use href="#ic-lotus"/></svg></span>
+          <span class="brand-text"><strong>Gayatri Restaurant &amp; Banquet</strong></span>
+        </div>
+        <p>Serving Pure Vegetarian Happiness &mdash; Gujarati, Punjabi &amp; Chinese cuisine in the heart of Vatva GIDC, Ahmedabad.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><svg><use href="#ic-insta"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg><use href="#ic-fb"/></svg></a>
+          <a href="https://wa.me/919426404429" aria-label="WhatsApp" target="_blank" rel="noopener"><svg><use href="#ic-whatsapp"/></svg></a>
         </div>
       </div>
-      <div class="footer-col">
+      <div>
         <h4>Quick Links</h4>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#menu">Our Menu</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#menu">Menu</a></li>
           <li><a href="#banquet">Banquet</a></li>
+          <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Services</h4>
+      <div>
+        <h4>Explore</h4>
         <ul>
-          <li><a href="#">Dine-in</a></li>
-          <li><a href="#">Drive-through</a></li>
-          <li><a href="#">No-contact Delivery</a></li>
-          <li><a href="#">Banquet Booking</a></li>
-          <li><a href="#">Party Planning</a></li>
-          <li><a href="#">Catering</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#special">Why Choose Us</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Reserve a Table</a></li>
         </ul>
       </div>
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <div class="fc-item">
-          <span class="icon">📍</span>
-          <span>Devdarshan Complex, Vatva GIDC Road, Vatva, Ahmedabad 382445</span>
-        </div>
-        <div class="fc-item">
-          <span class="icon">📞</span>
-          <span>+91 94278 05350</span>
-        </div>
-        <div class="fc-item">
-          <span class="icon">🕐</span>
-          <span>Open Daily · Till 11:00 PM</span>
-        </div>
-        <div class="fc-item">
-          <span class="icon">⭐</span>
-          <span>4.2 / 5 · 5,298+ Reviews</span>
-        </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="contact-line"><svg><use href="#ic-phone"/></svg>+91 94264 04429</div>
+        <div class="contact-line"><svg><use href="#ic-pin"/></svg>Rudraksh Complex, Trikampura, Vatva GIDC, Ahmedabad, Gujarat 382445</div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Annapurna Restaurant & Banquet. All Rights Reserved.</p>
-      <p>Made with ❤️ for <a href="#">annapurnarestaurantbanquet.com</a></p>
+      <span>&copy; 2026 Gayatri Restaurant &amp; Banquet. All Rights Reserved.</span>
+      <span>Pure Vegetarian &middot; Indian &middot; Punjabi &middot; Chinese &middot; Gujarati</span>
     </div>
   </div>
 </footer>
 
-<!-- FLOATING WHATSAPP -->
-<a href="https://wa.me/919427805350?text=Hello!%20I%20would%20like%20to%20book%20a%20table." target="_blank" class="wa-float" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
+<!-- ============ WHATSAPP FLOAT ============ -->
+<a class="wa-float" href="https://wa.me/919426404429?text=Hi%20Gayatri%20Restaurant%2C%20I%27d%20like%20to%20know%20more%20about%20table%20%2F%20banquet%20booking." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg><use href="#ic-whatsapp"/></svg>
 </a>
 
+<!-- ============ FULL MENU MODAL ============ -->
+<div class="modal-overlay" id="menuModal">
+  <div class="modal-box">
+    <button class="modal-close" id="closeMenuModal" aria-label="Close"><svg><use href="#ic-close"/></svg></button>
+    <div class="eyebrow">Complete Menu</div>
+    <h2 class="h2" style="margin-bottom:6px;">Everything We Serve</h2>
+    <p class="modal-note">This is a sample menu structure built from your reference categories. Exact item names &amp; prices can be edited freely &mdash; see the note in chat for details.</p>
+
+    <details class="acc-item" open>
+      <summary>Soups<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Hot &amp; Sour Soup</span><span>Manchow Soup</span><span>Sweet Corn Soup</span><span>Tomato Soup</span><span>Veg Clear Soup</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Starters &amp; Appetizers<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Paneer Tikka</span><span>Hara Bhara Kabab</span><span>Veg Seekh Kabab</span><span>Crispy Corn Chaat</span><span>Veg Spring Roll</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Tandoori &amp; Roti<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Butter Naan</span><span>Tandoori Roti</span><span>Lachha Paratha</span><span>Cheese Chilly Naan</span><span>Missi Roti</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Punjabi Main Course<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Paneer Tikka Masala</span><span>Kadhai Paneer Masala</span><span>Paneer Angaari</span><span>Dal Makhani</span><span>Veg Handi</span><span>Malai Kofta</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Gujarati Special<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Gujarati Thali</span><span>Dal Dhokli</span><span>Undhiyu</span><span>Khaman</span><span>Methi Thepla</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Chinese Starters<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Veg Manchurian</span><span>Crispy Veg</span><span>Chilli Paneer</span><span>Honey Chilli Potato</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Chinese Main Course<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Veg Hakka Noodles</span><span>Schezwan Fried Rice</span><span>Veg Manchurian Noodles</span><span>American Chopsuey</span><span>Veg Fried Rice</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Rice &amp; Biryani<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Veg Dum Biryani</span><span>SP Dum Handi Biryani</span><span>Matka Biryani</span><span>Veg Pulao</span><span>Jeera Rice</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Pizza &amp; Sandwich<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Margherita Pizza</span><span>Paneer Tikka Pizza</span><span>Veg Cheese Sandwich</span><span>Grilled Veg Sandwich</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Beverages &amp; Shakes<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Butter Milk (Chaas)</span><span>Cold Coffee</span><span>Fresh Lime Soda</span><span>Oreo Milk Shake</span><span>Mango Shake</span></div>
+    </details>
+    <details class="acc-item">
+      <summary>Desserts<svg><use href="#ic-chevron"/></svg></summary>
+      <div class="acc-list"><span>Gulab Jamun with Ice Cream</span><span>Rasmalai</span><span>Hot Chocolate Fudge</span><span>Fruit Salad</span><span>Kulfi</span></div>
+    </details>
+  </div>
+</div>
+
 <script>
-// ── Nav scroll ──
-const nav = document.getElementById('mainNav');
+// ---- nav scroll state + scrollspy ----
+const nav = document.getElementById('siteNav');
+const navLinks = document.querySelectorAll('.nav-links a, .mobile-drawer a[href^="#"]');
+const sections = document.querySelectorAll('main section[id]');
+
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
+  nav.classList.toggle('is-scrolled', window.scrollY > 30);
+}, {passive:true});
 
-// ── Mobile menu ──
-const hamburger = document.getElementById('hamburgerBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburger.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-function closeMobile() { mobileMenu.classList.remove('open'); }
-
-// ── Menu tabs ──
-const tabs = document.querySelectorAll('.tab-btn');
-const cards = document.querySelectorAll('.menu-card');
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-    const cat = tab.dataset.cat;
-    cards.forEach(card => {
-      if (cat === 'all' || card.dataset.cat === cat) {
-        card.classList.add('visible');
-      } else {
-        card.classList.remove('visible');
-      }
-    });
-  });
-});
-
-// ── Scroll reveal ──
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+const spy = new IntersectionObserver((entries) => {
+  entries.forEach(en => {
+    if(en.isIntersecting){
+      navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + en.target.id));
     }
   });
-}, { threshold: 0.12 });
-document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+}, {rootMargin: '-45% 0px -50% 0px'});
+sections.forEach(s => spy.observe(s));
 
-// ── Form submit ──
-function handleSubmit() {
-  const name = document.querySelector('input[type="text"]').value;
-  if (!name.trim()) { alert('Please enter your name to continue.'); return; }
-  alert(`Thank you, ${name}! Your reservation request has been received. We'll call you shortly to confirm. 🙏`);
+// ---- mobile drawer ----
+const drawer = document.getElementById('mobileDrawer');
+document.getElementById('hamburgerBtn').addEventListener('click', () => drawer.classList.add('is-open'));
+document.getElementById('drawerClose').addEventListener('click', () => drawer.classList.remove('is-open'));
+drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', () => drawer.classList.remove('is-open')));
+
+// ---- reveal on scroll ----
+const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const reveals = document.querySelectorAll('.reveal');
+if(prefersReduced){
+  reveals.forEach(r => r.classList.add('is-visible'));
+}else{
+  const ro = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('is-visible'); ro.unobserve(en.target); } });
+  }, {threshold:.15});
+  reveals.forEach(r => ro.observe(r));
 }
+
+// ---- menu tabs ----
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelector('.menu-panel[data-panel="' + btn.dataset.tab + '"]').classList.add('active');
+  });
+});
+
+// ---- full menu modal ----
+const modal = document.getElementById('menuModal');
+document.getElementById('openMenuModal').addEventListener('click', () => modal.classList.add('is-open'));
+document.getElementById('closeMenuModal').addEventListener('click', () => modal.classList.remove('is-open'));
+modal.addEventListener('click', (e) => { if(e.target === modal) modal.classList.remove('is-open'); });
+document.addEventListener('keydown', (e) => { if(e.key === 'Escape') modal.classList.remove('is-open'); });
+
+// ---- booking form ----
+document.getElementById('bookingForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const f = e.target;
+  const msg = `Hi Gayatri Restaurant, I'd like to make a booking.%0AName: ${encodeURIComponent(f.fname.value)}%0AMobile: ${encodeURIComponent(f.fmobile.value)}%0AType: ${encodeURIComponent(f.ftype.value)}%0AGuests: ${encodeURIComponent(f.fguests.value)}%0ADate: ${encodeURIComponent(f.fdate.value)}%0ATime: ${encodeURIComponent(f.ftime.value)}%0AMessage: ${encodeURIComponent(f.fmsg.value)}`;
+  document.getElementById('waConfirmLink').href = 'https://wa.me/919426404429?text=' + msg;
+  document.getElementById('successCard').classList.add('show');
+});
 </script>
 </body>
 </html>
